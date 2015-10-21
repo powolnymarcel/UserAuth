@@ -1,488 +1,951 @@
 <!DOCTYPE html>
+<!-- Template Name: Clip-Two - Responsive Admin Template build with Twitter Bootstrap 3.x | Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
-
+<!--<![endif]-->
+<!-- start: HEAD -->
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin - Bootstrap Admin Template</title>
-
+  <title>Clip-Two - Responsive Admin Template</title>
+  <!-- start: META -->
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <!-- end: META -->
+  <!-- start: GOOGLE FONTS -->
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+  <!-- end: GOOGLE FONTS -->
+  <!--STYLES-->
   <link rel="stylesheet" href="/js/dependencies/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/angular-toastr.min.css">
+  <link rel="stylesheet" href="/styles/animate.min.css">
+  <link rel="stylesheet" href="/styles/font-awesome.min.css">
   <link rel="stylesheet" href="/styles/importer.css">
-  <link rel="stylesheet" href="/styles/sb-admin.css">
-  <link rel="stylesheet" href="/styles/morris.css">
+  <link rel="stylesheet" href="/styles/jasny-bootstrap.css">
+  <link rel="stylesheet" href="/styles/perfect-scrollbar.min.css">
+  <link rel="stylesheet" href="/styles/plugins.css">
   <link rel="stylesheet" href="/styles/signin.css">
-
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/switchery.min.css">
+  <link rel="stylesheet" href="/styles/theme-1.css">
+  <link rel="stylesheet" href="/styles/themify-icons.min.css">
+  <!--STYLES END-->
 
 </head>
+<!-- end: HEAD -->
+<body >
+<div id="app" ng-app="DashMod" ng-controller="DashCtrl"  ng-init="getUser()">
 
-<body>
+  <div class="app-content">
 
-<div id="wrapper">
+    <div class="main-content" >
+      <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        <section id="page-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1 class="mainTitle">User Profile</h1>
+              <span class="mainDescription">There are many systems which have a need for user profile pages which display personal information on each member.</span>
+            </div>
+            <ol class="breadcrumb">
+              <li>
+                <span><a href="" class="btn btn-lg btn-warning" ng-click="logout()">LOGOUT</a></span>
+              </li>
+              <li class="active">
+                <span>User Profile</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <!-- end: PAGE TITLE -->
+        <!-- start: USER PROFILE -->
+        <div class="container-fluid container-fullw bg-white">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="tabbable">
+                <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+                  <li class="active">
+                    <a data-toggle="tab" href="#panel_overview">
+                      Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#panel_edit_account">
+                      Edit Account
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div id="panel_overview" class="tab-pane fade in active">
+                    <div class="row">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">SB Admin</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ****************************************************************USER ACCOUNT *****************************************************************************************************************************-->
+
+                      <div class="col-sm-5 col-md-4">
+                        <div class="user-left">
+                          <div class="center">
+                            <h4>Peter Clark</h4>
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                              <div class="user-image">
+                                <div class="fileinput-new thumbnail"><img src="http://www.gravatar.com/avatar/152fc9c9c01fd07835fe3644138075b7" alt="">
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                <div class="user-image-buttons">
+																			<span class="btn btn-azure btn-file btn-sm"><span class="fileinput-new"><i class="fa fa-pencil"></i></span><span class="fileinput-exists"><i class="fa fa-pencil"></i></span>
+																				<input type="file">
+																			</span>
+                                  <a href="#" class="btn fileinput-exists btn-red btn-sm" data-dismiss="fileinput">
+                                    <i class="fa fa-times"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                              <th colspan="3">Contact Information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td>url</td>
+                              <td>
+                                <a href="#">
+                                  www.example.com
+                                </a></td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>email:</td>
+                              <td>
+                                <a href="">
+                                  peter@example.com
+                                </a></td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>phone:</td>
+                              <td>(641)-734-4763</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>skye</td>
+                              <td>
+                                <a href="">
+                                  peterclark82
+                                </a></td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <table class="table">
+                            <thead>
+                            <tr>
+                              <th colspan="3">General information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td>Position</td>
+                              <td>UI Designer</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Last Logged In</td>
+                              <td>56 min</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Position</td>
+                              <td>Senior Marketing Manager</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Supervisor</td>
+                              <td>
+                                <a href="#">
+                                  Kenneth Ross
+                                </a></td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Status</td>
+                              <td><span class="label label-sm label-info">Administrator</span></td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <table class="table">
+                            <thead>
+                            <tr>
+                              <th colspan="3">Additional information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td>Birth</td>
+                              <td>21 October 1982</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Groups</td>
+                              <td>New company web site development, HR Management</td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+<!-- ****************************************************************EDIT ACCOUNT *****************************************************************************************************************************-->
+
+                    </div>
+                  </div>
+                  <div id="panel_edit_account" class="tab-pane fade">
+                    <form action="#" role="form" id="form">
+                      <fieldset>
+                        <legend>
+                          Account Info
+                        </legend>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="control-label">
+                                Nom
+                              </label>
+                              <input type="text" placeholder="Peter" ng-model="nom" class="form-control" id="firstname" name="firstname">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                Prenom
+                              </label>
+                              <input type="text" placeholder="Clark" ng-model="prenom" class="form-control" id="lastname" name="lastname">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                Email Address
+                              </label>
+                              <input type="email" placeholder="peter@example.com" ng-model="email"  class="form-control" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                Pseudo
+                              </label>
+                              <input type="text" placeholder="pseudo" ng-model="pseudo" class="form-control" id="phone" name="email">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                Password
+                              </label>
+                              <input type="password" ng-model="password" placeholder="password" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                Confirm Password
+                              </label>
+                              <input type="password" ng-model="password_confirmation"  placeholder="password" class="form-control" id="password_again" name="password_again">
+                            </div>
+                          </div>
+                      <fieldset>
+                        <legend>
+                          Additional Info
+                        </legend>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="control-label">
+                              Password
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="password" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                lastLoggedIn
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="lastLoggedIn" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                GravatarUrl
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="gravatarUrl" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                CreatedAt
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="createdAt" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                UpdatedAt
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="updatedAt" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">
+                                ID
+                              </label>
+																	<span class="input-icon">
+																		<input class="form-control" disabled ng-model="id" type="text" >
+                                    <i class="fa fa-twitter"></i> </span>
+                            </div>
+                          </div>
+                      </fieldset>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div>
+                            Required Fields
+                            <hr>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <p>
+                            By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions.
+                          </p>
+                        </div>
+                        <div class="col-md-4">
+                          <button class="btn btn-primary pull-right" type="submit">
+                            Update <i class="fa fa-arrow-circle-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end: USER PROFILE -->
+      </div>
     </div>
-    <!-- Top Menu Items -->
-    <ul class="nav navbar-right top-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-        <ul class="dropdown-menu message-dropdown">
-          <li class="message-preview">
-            <a href="#">
-              <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                <div class="media-body">
-                  <h5 class="media-heading"><strong>John Smith</strong>
-                  </h5>
-                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="message-preview">
-            <a href="#">
-              <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                <div class="media-body">
-                  <h5 class="media-heading"><strong>John Smith</strong>
-                  </h5>
-                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="message-preview">
-            <a href="#">
-              <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                <div class="media-body">
-                  <h5 class="media-heading"><strong>John Smith</strong>
-                  </h5>
-                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="message-footer">
-            <a href="#">Read All New Messages</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-        <ul class="dropdown-menu alert-dropdown">
-          <li>
-            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-          </li>
-          <li>
-            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-          </li>
-          <li>
-            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-          </li>
-          <li>
-            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-          </li>
-          <li>
-            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-          </li>
-          <li>
-            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">View All</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav side-nav">
+  </div>
+  <!-- start: FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="pull-left">
+        &copy; <span class="current-year"></span><span class="text-bold text-uppercase">ClipTheme</span>. <span>All rights reserved</span>
+      </div>
+      <div class="pull-right">
+        <span class="go-top"><i class="ti-angle-up"></i></span>
+      </div>
+    </div>
+  </footer>
+  <!-- end: FOOTER -->
+  <!-- start: OFF-SIDEBAR -->
+  <div id="off-sidebar" class="sidebar">
+    <div class="sidebar-wrapper">
+      <ul class="nav nav-tabs nav-justified">
         <li class="active">
-          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+          <a href="#off-users" aria-controls="off-users" role="tab" data-toggle="tab">
+            <i class="ti-comments"></i>
+          </a>
         </li>
         <li>
-          <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+          <a href="#off-favorites" aria-controls="off-favorites" role="tab" data-toggle="tab">
+            <i class="ti-heart"></i>
+          </a>
         </li>
         <li>
-          <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-        </li>
-        <li>
-          <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-        </li>
-        <li>
-          <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-        </li>
-        <li>
-          <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-        </li>
-        <li>
-          <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-          <ul id="demo" class="collapse">
-            <li>
-              <a href="#">Dropdown Item</a>
-            </li>
-            <li>
-              <a href="#">Dropdown Item</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-        </li>
-        <li>
-          <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+          <a href="#off-settings" aria-controls="off-settings" role="tab" data-toggle="tab">
+            <i class="ti-settings"></i>
+          </a>
         </li>
       </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="off-users">
+          <div id="users" toggleable active-class="chat-open">
+            <div class="users-list">
+              <div class="sidebar-content perfect-scrollbar">
+                <h5 class="sidebar-title">On-line</h5>
+                <ul class="media-list">
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <i class="fa fa-circle status-online"></i>
+                      <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Nicole Bell</h4>
+                        <span> Content Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <div class="user-label">
+                        <span class="label label-success">3</span>
+                      </div>
+                      <i class="fa fa-circle status-online"></i>
+                      <img alt="..." src="assets/images/avatar-3.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Steven Thompson</h4>
+                        <span> Visual Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <i class="fa fa-circle status-online"></i>
+                      <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Ella Patterson</h4>
+                        <span> Web Editor </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <i class="fa fa-circle status-online"></i>
+                      <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Kenneth Ross</h4>
+                        <span> Senior Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <h5 class="sidebar-title">Off-line</h5>
+                <ul class="media-list">
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Nicole Bell</h4>
+                        <span> Content Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <div class="user-label">
+                        <span class="label label-success">3</span>
+                      </div>
+                      <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Steven Thompson</h4>
+                        <span> Visual Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <img alt="..." src="assets/images/avatar-8.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Ella Patterson</h4>
+                        <span> Web Editor </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <img alt="..." src="assets/images/avatar-9.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Kenneth Ross</h4>
+                        <span> Senior Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Ella Patterson</h4>
+                        <span> Web Editor </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="media">
+                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
+                      <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                      <div class="media-body">
+                        <h4 class="media-heading">Kenneth Ross</h4>
+                        <span> Senior Designer </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="user-chat">
+              <div class="chat-content">
+                <div class="sidebar-content perfect-scrollbar">
+                  <a class="sidebar-back pull-left" href="#" data-toggle-class="chat-open" data-toggle-target="#users"><i class="ti-angle-left"></i> <span>Back</span></a>
+                  <ol class="discussion">
+                    <li class="messages-date">
+                      Sunday, Feb 9, 12:58
+                    </li>
+                    <li class="self">
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          Hi, Nicole
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          How are you?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          Hi, i am good
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="self">
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          Glad to see you ;)
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="messages-date">
+                      Sunday, Feb 9, 13:10
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          What do you think about my new Dashboard?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="messages-date">
+                      Sunday, Feb 9, 15:28
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          Alo...
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          Are you there?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="self">
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          Hi, i am here
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          Your Dashboard is great
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="messages-date">
+                      Friday, Feb 7, 23:39
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          How does the binding and digesting work in AngularJS?, Peter?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="self">
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          oh that's your question?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          little reduntant, no?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          literally we get the question daily
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          I know. I, however, am not a nerd, and want to know
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="self">
+                      <div class="message">
+                        <div class="message-name">
+                          Peter Clark
+                        </div>
+                        <div class="message-text">
+                          for this type of question, wouldn't it be better to try Google?
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-1.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="other">
+                      <div class="message">
+                        <div class="message-name">
+                          Nicole Bell
+                        </div>
+                        <div class="message-text">
+                          Lucky for us :)
+                        </div>
+                        <div class="message-avatar">
+                          <img src="assets/images/avatar-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="message-bar">
+                <div class="message-inner">
+                  <a class="link icon-only" href="#"><i class="fa fa-camera"></i></a>
+                  <div class="message-area">
+                    <textarea placeholder="Message"></textarea>
+                  </div>
+                  <a class="link" href="#">
+                    Send
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="off-favorites">
+          <div class="users-list">
+            <div class="sidebar-content perfect-scrollbar">
+              <h5 class="sidebar-title">Favorites</h5>
+              <ul class="media-list">
+                <li class="media">
+                  <a href="#">
+                    <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Nicole Bell</h4>
+                      <span> Content Designer </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="media">
+                  <a href="#">
+                    <div class="user-label">
+                      <span class="label label-success">3</span>
+                    </div>
+                    <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Steven Thompson</h4>
+                      <span> Visual Designer </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="media">
+                  <a href="#">
+                    <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Ella Patterson</h4>
+                      <span> Web Editor </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="media">
+                  <a href="#">
+                    <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Kenneth Ross</h4>
+                      <span> Senior Designer </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="media">
+                  <a href="#">
+                    <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Ella Patterson</h4>
+                      <span> Web Editor </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="media">
+                  <a href="#">
+                    <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                    <div class="media-body">
+                      <h4 class="media-heading">Kenneth Ross</h4>
+                      <span> Senior Designer </span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="off-settings">
+          <div class="sidebar-content perfect-scrollbar">
+            <h5 class="sidebar-title">General Settings</h5>
+            <ul class="media-list">
+              <li class="media">
+                <div class="padding-10">
+                  <div class="display-table-cell">
+                    <input type="checkbox" class="js-switch" checked />
+                  </div>
+                  <span class="display-table-cell vertical-align-middle padding-left-10">Enable Notifications</span>
+                </div>
+              </li>
+              <li class="media">
+                <div class="padding-10">
+                  <div class="display-table-cell">
+                    <input type="checkbox" class="js-switch" />
+                  </div>
+                  <span class="display-table-cell vertical-align-middle padding-left-10">Show your E-mail</span>
+                </div>
+              </li>
+              <li class="media">
+                <div class="padding-10">
+                  <div class="display-table-cell">
+                    <input type="checkbox" class="js-switch" checked />
+                  </div>
+                  <span class="display-table-cell vertical-align-middle padding-left-10">Show Offline Users</span>
+                </div>
+              </li>
+              <li class="media">
+                <div class="padding-10">
+                  <div class="display-table-cell">
+                    <input type="checkbox" class="js-switch" checked />
+                  </div>
+                  <span class="display-table-cell vertical-align-middle padding-left-10">E-mail Alerts</span>
+                </div>
+              </li>
+              <li class="media">
+                <div class="padding-10">
+                  <div class="display-table-cell">
+                    <input type="checkbox" class="js-switch" />
+                  </div>
+                  <span class="display-table-cell vertical-align-middle padding-left-10">SMS Alerts</span>
+                </div>
+              </li>
+            </ul>
+            <div class="save-options">
+              <button class="btn btn-success">
+                <i class="icon-settings"></i><span>Save Changes</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.navbar-collapse -->
-  </nav>
-
-  <div id="page-wrapper">
-
-    <div class="container-fluid">
-
-      <!-- Page Heading -->
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-header">
-            Dashboard <small>Statistics Overview</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li class="active">
-              <i class="fa fa-dashboard"></i> Dashboard
-            </li>
-          </ol>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="alert alert-info alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col-xs-3">
-                  <i class="fa fa-comments fa-5x"></i>
-                </div>
-                <div class="col-xs-9 text-right">
-                  <div class="huge">26</div>
-                  <div>New Comments!</div>
-                </div>
-              </div>
-            </div>
-            <a href="#">
-              <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="panel panel-green">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col-xs-3">
-                  <i class="fa fa-tasks fa-5x"></i>
-                </div>
-                <div class="col-xs-9 text-right">
-                  <div class="huge">12</div>
-                  <div>New Tasks!</div>
-                </div>
-              </div>
-            </div>
-            <a href="#">
-              <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="panel panel-yellow">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col-xs-3">
-                  <i class="fa fa-shopping-cart fa-5x"></i>
-                </div>
-                <div class="col-xs-9 text-right">
-                  <div class="huge">124</div>
-                  <div>New Orders!</div>
-                </div>
-              </div>
-            </div>
-            <a href="#">
-              <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="panel panel-red">
-            <div class="panel-heading">
-              <div class="row">
-                <div class="col-xs-3">
-                  <i class="fa fa-support fa-5x"></i>
-                </div>
-                <div class="col-xs-9 text-right">
-                  <div class="huge">13</div>
-                  <div>Support Tickets!</div>
-                </div>
-              </div>
-            </div>
-            <a href="#">
-              <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-            </div>
-            <div class="panel-body">
-              <div id="morris-area-chart"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart</h3>
-            </div>
-            <div class="panel-body">
-              <div id="morris-donut-chart"></div>
-              <div class="text-right">
-                <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
-            </div>
-            <div class="panel-body">
-              <div class="list-group">
-                <a href="#" class="list-group-item">
-                  <span class="badge">just now</span>
-                  <i class="fa fa-fw fa-calendar"></i> Calendar updated
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">4 minutes ago</span>
-                  <i class="fa fa-fw fa-comment"></i> Commented on a post
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">23 minutes ago</span>
-                  <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">46 minutes ago</span>
-                  <i class="fa fa-fw fa-money"></i> Invoice 653 has been paid
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">1 hour ago</span>
-                  <i class="fa fa-fw fa-user"></i> A new user has been added
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">2 hours ago</span>
-                  <i class="fa fa-fw fa-check"></i> Completed task: "pick up dry cleaning"
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">yesterday</span>
-                  <i class="fa fa-fw fa-globe"></i> Saved the world
-                </a>
-                <a href="#" class="list-group-item">
-                  <span class="badge">two days ago</span>
-                  <i class="fa fa-fw fa-check"></i> Completed task: "fix error on sales page"
-                </a>
-              </div>
-              <div class="text-right">
-                <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
-            </div>
-            <div class="panel-body">
-              <div class="table-responsive">
-                <table class="table table-bordered table-hover table-striped">
-                  <thead>
-                  <tr>
-                    <th>Order #</th>
-                    <th>Order Date</th>
-                    <th>Order Time</th>
-                    <th>Amount (USD)</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>3326</td>
-                    <td>10/21/2013</td>
-                    <td>3:29 PM</td>
-                    <td>$321.33</td>
-                  </tr>
-                  <tr>
-                    <td>3325</td>
-                    <td>10/21/2013</td>
-                    <td>3:20 PM</td>
-                    <td>$234.34</td>
-                  </tr>
-                  <tr>
-                    <td>3324</td>
-                    <td>10/21/2013</td>
-                    <td>3:03 PM</td>
-                    <td>$724.17</td>
-                  </tr>
-                  <tr>
-                    <td>3323</td>
-                    <td>10/21/2013</td>
-                    <td>3:00 PM</td>
-                    <td>$23.71</td>
-                  </tr>
-                  <tr>
-                    <td>3322</td>
-                    <td>10/21/2013</td>
-                    <td>2:49 PM</td>
-                    <td>$8345.23</td>
-                  </tr>
-                  <tr>
-                    <td>3321</td>
-                    <td>10/21/2013</td>
-                    <td>2:23 PM</td>
-                    <td>$245.12</td>
-                  </tr>
-                  <tr>
-                    <td>3320</td>
-                    <td>10/21/2013</td>
-                    <td>2:15 PM</td>
-                    <td>$5663.54</td>
-                  </tr>
-                  <tr>
-                    <td>3319</td>
-                    <td>10/21/2013</td>
-                    <td>2:13 PM</td>
-                    <td>$943.45</td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="text-right">
-                <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
-
-    </div>
-    <!-- /.container-fluid -->
-
   </div>
-  <!-- /#page-wrapper -->
+  <!-- end: OFF-SIDEBAR -->
 
 </div>
-<!-- /#wrapper -->
+<!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/dependencies/bower_components/jquery/dist/jquery.js"></script>
 <script src="/js/dependencies/bower_components/angular/angular.js"></script>
 <script src="/js/dependencies/angular-toastr.js"></script>
 <script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
 <script src="/js/dependencies/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/js/dependencies/raphael.min.js"></script>
-<script src="/js/dependencies/morris.js"></script>
-<script src="/js/dependencies/morris-data.js"></script>
 <script src="/js/public/signup/SignupMod.js"></script>
 <script src="/js/public/signup/SignupCtrl.js"></script>
 <script src="/js/public/login/LoginMod.js"></script>
 <script src="/js/public/login/LoginCtrl.js"></script>
+<script src="/js/private/dashboard/DashMod.js"></script>
+<script src="/js/private/dashboard/DashCtrl.js"></script>
+<script src="/js/jasny-bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/perfect-scrollbar.min.js"></script>
 <script src="/js/scripts.js"></script>
+<script src="/js/switchery.min.js"></script>
+<!--SCRIPTS END-->
 
+<script>
+  jQuery(document).ready(function() {
+    Main.init();
+  });
+</script>
+<!-- end: JavaScript Event Handlers for this page -->
+<!-- end: CLIP-TWO JAVASCRIPTS -->
 </body>
-
 </html>

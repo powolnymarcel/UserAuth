@@ -12,7 +12,7 @@ angular.module('LoginMod').
     }).then(function onSuccess(){
       console.log('Login reussi')
       //Si on est loggé et qu'on veut visiter le login FORM ON sera redirigé.
-    //  window.location= '/'
+      window.location= '/dashboard'
     }).catch(function onError(err){
       if (err.status == 400 || 404){
         //TOASTR PERMET D'AVOIR DES MESSAGES FLASH
