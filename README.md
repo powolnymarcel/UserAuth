@@ -1,7 +1,24 @@
+#Requis pour lancer l'app:
+git
+Python (j'ai utilisé la v2.7.10)
+Nodejs (j'ai utilisé la v0.12.7 || 4.2.1)
+(Pensez à mettre à jour la variable PATH)
+<hr>
+#Etapes pour lancer l'APP:
+Dans l'invite de commandes (npm install peut prendre un certain temps...)
+npm install
+sails lift
+
+Voir résultat sur localhost:1337
+<hr>
+
 #TODO
 <hr>
 Mettre de l'ordre dans le ReadMe
 <hr>
+
+
+
 
 - Utilise le framework Sails, c'est un framwork MVC qui fonctionne sur le serveur nodeJS
 - Fonctionne très bien avec des interface RESTFULL et les API DATA
