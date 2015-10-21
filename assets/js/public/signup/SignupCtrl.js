@@ -14,9 +14,9 @@ angular.module('SignupMod').
         // A ce moment le password est en clair mais on va utiliser la fn NodeMachine plus tard pour encrypter le password
         password: $scope.password
       })
-                      // si tout s'est bien passé on redirige vers '/user'
+                      // si tout s'est bien passé on redirige vers '/' pour avoir le form de login
         .then(function onSuccess(res){
-          window.location='/user'
+          window.location='/'
         })
         // si erreurs alors on LOG les erreurs
         .catch(function onError(err){
