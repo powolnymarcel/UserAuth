@@ -42,9 +42,11 @@ module.exports.routes = {
   // Va aller dans le controleur SERVEUR   userController et lancer la fn signup
   'POST /signup': 'UserController.signup',
 
-  'PUT /login': 'UserController.login'
+  'PUT /login': 'UserController.login',
 
-
+  'GET /dashboard': {
+    view: 'dashboard'
+  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
