@@ -12,7 +12,7 @@ Dans l'invite de commandes (npm install peut prendre un certain temps...)
 <li>npm install</li>
 <li>sails lift</li>
 </ul>
-Voir résultat sur localhost:1337Me
+Voir résultat sur localhost:1337
 <hr>
 #TODO
 <ul>
