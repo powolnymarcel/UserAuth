@@ -20,11 +20,18 @@ module.exports = {
   },
 
 
-  getUser:function(){
-    console.log('Fn getUser executée !!!');
+  getUser:function(req,res){
+    console.log('FOnction getUser executée !!!');
+
+    User.findOne({id: req.session.me},function(err,user){
+      if(err){
+        res.negociate(err);
+      }
+      return res.send(user);
+    })
   }
 
-  
+
 
 };
 
