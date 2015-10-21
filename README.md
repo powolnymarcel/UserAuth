@@ -1,20 +1,18 @@
 #Requis pour lancer l'app:
-git
-Python (j'ai utilisé la v2.7.10)
-Nodejs (j'ai utilisé la v0.12.7 || 4.2.1)
+<ul>
+<li>git</li>
+<li>Python (j'ai utilisé la v2.7.10)</li>
+<li>Nodejs (j'ai utilisé la v0.12.7 || 4.2.1)</li>
+</ul>
 (Pensez à mettre à jour la variable PATH)
 <hr>
 #Etapes pour lancer l'APP:
 Dans l'invite de commandes (npm install peut prendre un certain temps...)
-npm install
-sails lift
-
+<ul>
+<li>npm install</li>
+<li>sails lift</li>
+</ul>
 Voir résultat sur localhost:1337
-<hr>
-
-#TODO
-<hr>
-Mettre de l'ordre dans le ReadMe
 <hr>
 
 
