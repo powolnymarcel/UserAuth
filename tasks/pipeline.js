@@ -30,9 +30,12 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/bower_components/jquery/dist/jquery.js',
+  'js/dependencies/bower_components/angular/angular.js',
   'js/dependencies/**/*.js',
   'js/public/signup/SignupMod.js',
   'js/public/signup/SignupCtrl.js',
+  'js/public/login/LoginMod.js',
+  'js/public/login/LoginCtrl.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js',

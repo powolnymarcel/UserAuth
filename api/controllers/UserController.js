@@ -59,6 +59,39 @@ module.exports = {
         })
       }
     })
+  },
+  login: function(req,res){
+    // Valider l'user
+    User.findOne({
+      email: req.param('email')
+    },function foundUser(err, user){
+      if(err){
+        return res.negotiate(err);
+      }
+      if(!user){
+          //La fn notFound est prédefinnie dans le dossier api/responses/notFound
+        return res.notFound();
+      }
+
+      require('machinepack-passwords').checkPassword({
+        passwordAttempt: req.param('password'),
+        encryptedPassword: user.password
+      }).exec({
+        error: function(err){
+          console.log(err);
+          return res.negotiate(err);
+        },
+        incorrect: function(){
+          console.log('Erreur mot de passe incorrect')
+          return res.notFound();
+        },
+        success: function(){
+          //req.session.me= user.id;
+          console.log('Succes vous etes loggé')
+          return res.ok();
+        }
+      })
+    })
   }
 
 

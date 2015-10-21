@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auth App</title>
+  <!--STYLES-->
+  <link rel="stylesheet" href="/js/dependencies/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/angular-toastr.min.css">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <link rel="stylesheet" href="/styles/signin.css">
+  <!--STYLES END-->
+
+</head>
+<body ng-app="LoginMod" ng-controller="LoginCtrl" class="container">
+
+<div class="modal-dialog">
+  <div class="loginmodal-container">
+    <h1>Login to Your Account</h1><br>
+    <form ng-submit="runLogin()">
+      <input type="email" ng-model="email" name="email" placeholder="Email">
+      <input type="password" ng-model="password" name="pass" placeholder="Password">
+      <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+    </form>
+
+    <div class="login-help">
+      <a href="#">Register</a> - <a href="#">Forgot Password</a>
+    </div>
+  </div>
+</div>
+
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dependencies/bower_components/jquery/dist/jquery.js"></script>
+<script src="/js/dependencies/bower_components/angular/angular.js"></script>
+<script src="/js/dependencies/angular-toastr.js"></script>
+<script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
+<script src="/js/dependencies/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/js/public/signup/SignupMod.js"></script>
+<script src="/js/public/signup/SignupCtrl.js"></script>
+<script src="/js/public/login/LoginMod.js"></script>
+<script src="/js/public/login/LoginCtrl.js"></script>
+<script src="/js/scripts.js"></script>
+<!--SCRIPTS END-->
+</body>
+</html>

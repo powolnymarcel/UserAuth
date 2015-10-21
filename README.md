@@ -194,7 +194,19 @@ Au click sur "enregister" dans le formulaire on lance la fonction "runSignup" du
  'UserController.signup'. Cette fonction crée le USER
 
 
+Ensuite on crée le form de login
+**********************************
+Dans le dossier public/login on crée 2 fichiers LoginMod.js et LoginCtrl.js
+Dans le dossier views on crée la vue login
+Dans le fichier routes.js on ajoute la route racine pour qu'elle affiche le form de login
+
+On attache le ng-submit au form
+On attache les ng-model au form
+
+On s'occupe du LoginCtrl
+
+On implemente toaster dans le LoginMod et LoginCtrl
 
 
-
-
+Ensuite on crée le DASHBOARD USER
+**********************************

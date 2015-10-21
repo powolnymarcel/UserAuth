@@ -31,15 +31,18 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-
+  'GET /': {
+    view: 'login'
+  },
 
   'GET /signup': {
     view: 'signup'
   },
 
   // Va aller dans le controleur SERVEUR   userController et lancer la fn signup
-  'POST /signup': 'UserController.signup'
+  'POST /signup': 'UserController.signup',
 
+  'PUT /login': 'UserController.login'
 
 
   /***************************************************************************
