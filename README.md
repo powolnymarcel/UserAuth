@@ -12,12 +12,25 @@ Dans l'invite de commandes (npm install peut prendre un certain temps...)
 <li>npm install</li>
 <li>sails lift</li>
 </ul>
-Voir résultat sur localhost:1337
+Voir résultat sur localhost:1337Me
 <hr>
+#TODO
+<ul>
+<li>Mettre de l'ordre dans le readMe</li>
+</ul>
 
+notes :
+Ajout de bbower.json pour indiquer les dépendances nécessaires
+Ajout de .bowerrc pour indiquer le chemin d'installation des dépendances.
+Ajout dans package.json de :
 
+ "scripts": {
+    "postinstall": "bower install",
 
-
+     "dependencies": {
+    "bower": "*",
+    "sails-disk": "^0.10.8"
+ ////////////////////////////////////
 - Utilise le framework Sails, c'est un framwork MVC qui fonctionne sur le serveur nodeJS
 - Fonctionne très bien avec des interface RESTFULL et les API DATA
 
