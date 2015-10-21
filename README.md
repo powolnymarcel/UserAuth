@@ -1,3 +1,8 @@
+#TODO
+<hr>
+Mettre de l'ordre dans le ReadMe
+<hr>
+
 - Utilise le framework Sails, c'est un framwork MVC qui fonctionne sur le serveur nodeJS
 - Fonctionne très bien avec des interface RESTFULL et les API DATA
 
