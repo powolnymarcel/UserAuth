@@ -17,7 +17,8 @@ var tmpPath = '.tmp/public/';
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'js/dependencies/bower_components/bootstrap/dist/css/bootstrap.min.css',
-  'styles/**/*.css'
+  'styles/**/*.css',
+  'login/**/*.css'
 ];
 
 
@@ -41,6 +42,7 @@ var jsFilesToInject = [
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js',
+  'login/**/*.js',
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'

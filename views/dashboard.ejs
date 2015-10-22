@@ -50,11 +50,10 @@
           <div class="row">
             <div class="col-sm-8">
               <h1 class="mainTitle">User Profile</h1>
-              <span class="mainDescription">There are many systems which have a need for user profile pages which display personal information on each member.</span>
             </div>
             <ol class="breadcrumb">
               <li>
-                <span><a href="" class="btn btn-lg btn-warning" ng-click="logout()">LOGOUT</a></span>
+                <span><a href="" class="  " ng-click="logout()">LOGOUT</a></span>
               </li>
               <li class="active">
                 <span>User Profile</span>
@@ -71,12 +70,12 @@
                 <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
                   <li class="active">
                     <a data-toggle="tab" href="#panel_overview">
-                      Overview
+                      Aperçu
                     </a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#panel_edit_account">
-                      Edit Account
+                      Editer
                     </a>
                   </li>
                 </ul>
@@ -176,9 +175,7 @@
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                 <div class="user-image-buttons">
-																			<span class="btn btn-azure btn-file btn-sm"><span class="fileinput-new"><i class="fa fa-pencil"></i></span><span class="fileinput-exists"><i class="fa fa-pencil"></i></span>
-																				<input type="file">
-																			</span>
+
                                   <a href="#" class="btn fileinput-exists btn-red btn-sm" data-dismiss="fileinput">
                                     <i class="fa fa-times"></i>
                                   </a>
@@ -189,37 +186,36 @@
                           <table class="table table-condensed">
                             <thead>
                             <tr>
-                              <th colspan="3">Contact Information</th>
+                              <th colspan="3">Informations</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                              <td>url</td>
+                              <td>Nom:</td>
                               <td>
-                                <a href="#">
-                                  www.example.com
-                                </a></td>
+                                 {{user.nom}}
+                                </td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Prenom:</td>
+                              <td>
+                                  {{user.prenom}}
+                                </td>
+                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                            </tr>
+                            <tr>
+                              <td>Pseudo:</td>
+                              <td>
+                                  {{user.pseudo}}
+                                </td>
                               <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
                             </tr>
                             <tr>
                               <td>email:</td>
                               <td>
-                                <a href="">
-                                  peter@example.com
-                                </a></td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            <tr>
-                              <td>phone:</td>
-                              <td>(641)-734-4763</td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            <tr>
-                              <td>skye</td>
-                              <td>
-                                <a href="">
-                                  peterclark82
-                                </a></td>
+                                  {{user.email}}
+                                </td>
                               <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
                             </tr>
                             </tbody>
@@ -227,57 +223,25 @@
                           <table class="table">
                             <thead>
                             <tr>
-                              <th colspan="3">General information</th>
+                              <th colspan="3">Informations generales</th>
                             </tr>
                             </thead>
                             <tbody>
+
                             <tr>
-                              <td>Position</td>
-                              <td>UI Designer</td>
+                              <td>Creation du compte</td>
+                              <td> Depuis {{(dateNow |date:'M') - (dateSub |date:'M') }} mois -
+                                          {{(dateNow |date:'d') - (dateSub |date:'d') }} J -
+                                          {{(dateNow |date:'H') - (dateSub |date:'H') }} H -
+                                          {{(dateNow |date:'m') - (dateSub |date:'m') }} M -
+                                          {{(dateSub |date:'s') - (dateNow |date:'s') }} S </td>
                               <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
                             </tr>
                             <tr>
-                              <td>Last Logged In</td>
-                              <td>56 min</td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+                              <td>Url du gravatar</td>
+                              <td>{{user.gravatarUrl |limitTo:40}}...</td>
                             </tr>
-                            <tr>
-                              <td>Position</td>
-                              <td>Senior Marketing Manager</td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            <tr>
-                              <td>Supervisor</td>
-                              <td>
-                                <a href="#">
-                                  Kenneth Ross
-                                </a></td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            <tr>
-                              <td>Status</td>
-                              <td><span class="label label-sm label-info">Administrator</span></td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                          <table class="table">
-                            <thead>
-                            <tr>
-                              <th colspan="3">Additional information</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                              <td>Birth</td>
-                              <td>21 October 1982</td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
-                            <tr>
-                              <td>Groups</td>
-                              <td>New company web site development, HR Management</td>
-                              <td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                            </tr>
+
                             </tbody>
                           </table>
                         </div>
@@ -291,33 +255,33 @@
                     <form action="#" role="form" id="form">
                       <fieldset>
                         <legend>
-                          Account Info
+                          Informations
                         </legend>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="control-label">
-                                Nom
+                                Nom*
                               </label>
-                              <input type="text" placeholder="Peter" ng-model="nom" class="form-control" id="firstname" name="firstname">
+                              <input type="text" placeholder="Peter" ng-model="user.nom" class="form-control" id="firstname" name="firstname">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
-                                Prenom
+                                Prenom*
                               </label>
-                              <input type="text" placeholder="Clark" ng-model="prenom" class="form-control" id="lastname" name="lastname">
+                              <input type="text" placeholder="Clark" ng-model="user.prenom" class="form-control" id="lastname" name="lastname">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
-                                Email Address
+                                Email Address*
                               </label>
-                              <input type="email" placeholder="peter@example.com" ng-model="email"  class="form-control" id="email" name="email">
+                              <input type="email" placeholder="peter@example.com" ng-model="user.email"  class="form-control" id="email" name="email">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
-                                Pseudo
+                                Pseudo*
                               </label>
-                              <input type="text" placeholder="pseudo" ng-model="pseudo" class="form-control" id="phone" name="email">
+                              <input type="text" placeholder="pseudo" ng-model="user.pseudo" class="form-control" id="phone" name="email">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
@@ -334,15 +298,15 @@
                           </div>
                       <fieldset>
                         <legend>
-                          Additional Info
+                          Infos en +
                         </legend>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="control-label">
-                              Password
+                              Password crypté
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="password" type="text" >
+																		<input class="form-control" disabled ng-model="user.password" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -350,7 +314,7 @@
                                 lastLoggedIn
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="lastLoggedIn" type="text" >
+																		<input class="form-control" disabled ng-model="user.lastLoggedIn" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -358,7 +322,7 @@
                                 GravatarUrl
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="gravatarUrl" type="text" >
+																		<input class="form-control" disabled ng-model="user.gravatarUrl" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -366,7 +330,7 @@
                                 CreatedAt
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="createdAt" type="text" >
+																		<input class="form-control" disabled ng-model="user.createdAt" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -374,7 +338,7 @@
                                 UpdatedAt
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="updatedAt" type="text" >
+																		<input class="form-control" disabled ng-model="user.updatedAt" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -382,7 +346,7 @@
                                 ID
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="id" type="text" >
+																		<input class="form-control" disabled ng-model="user.id" type="text" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                           </div>
@@ -390,7 +354,7 @@
                       <div class="row">
                         <div class="col-md-12">
                           <div>
-                            Required Fields
+                            *Champs requis
                             <hr>
                           </div>
                         </div>
@@ -408,7 +372,7 @@
                         </div>
                       </div>
                     </form>
-                  </div>
+                </div>
 
                 </div>
               </div>
@@ -420,506 +384,15 @@
     </div>
   </div>
   <!-- start: FOOTER -->
-  <footer>
+  <footer class="container">
     <div class="footer-inner">
       <div class="pull-left">
         &copy; <span class="current-year"></span><span class="text-bold text-uppercase">ClipTheme</span>. <span>All rights reserved</span>
       </div>
-      <div class="pull-right">
-        <span class="go-top"><i class="ti-angle-up"></i></span>
-      </div>
     </div>
   </footer>
   <!-- end: FOOTER -->
-  <!-- start: OFF-SIDEBAR -->
-  <div id="off-sidebar" class="sidebar">
-    <div class="sidebar-wrapper">
-      <ul class="nav nav-tabs nav-justified">
-        <li class="active">
-          <a href="#off-users" aria-controls="off-users" role="tab" data-toggle="tab">
-            <i class="ti-comments"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#off-favorites" aria-controls="off-favorites" role="tab" data-toggle="tab">
-            <i class="ti-heart"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#off-settings" aria-controls="off-settings" role="tab" data-toggle="tab">
-            <i class="ti-settings"></i>
-          </a>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="off-users">
-          <div id="users" toggleable active-class="chat-open">
-            <div class="users-list">
-              <div class="sidebar-content perfect-scrollbar">
-                <h5 class="sidebar-title">On-line</h5>
-                <ul class="media-list">
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <i class="fa fa-circle status-online"></i>
-                      <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Nicole Bell</h4>
-                        <span> Content Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <div class="user-label">
-                        <span class="label label-success">3</span>
-                      </div>
-                      <i class="fa fa-circle status-online"></i>
-                      <img alt="..." src="assets/images/avatar-3.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Steven Thompson</h4>
-                        <span> Visual Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <i class="fa fa-circle status-online"></i>
-                      <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Ella Patterson</h4>
-                        <span> Web Editor </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <i class="fa fa-circle status-online"></i>
-                      <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Kenneth Ross</h4>
-                        <span> Senior Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <h5 class="sidebar-title">Off-line</h5>
-                <ul class="media-list">
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Nicole Bell</h4>
-                        <span> Content Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <div class="user-label">
-                        <span class="label label-success">3</span>
-                      </div>
-                      <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Steven Thompson</h4>
-                        <span> Visual Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <img alt="..." src="assets/images/avatar-8.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Ella Patterson</h4>
-                        <span> Web Editor </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <img alt="..." src="assets/images/avatar-9.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Kenneth Ross</h4>
-                        <span> Senior Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Ella Patterson</h4>
-                        <span> Web Editor </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="media">
-                    <a data-toggle-class="chat-open" data-toggle-target="#users" href="#">
-                      <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
-                      <div class="media-body">
-                        <h4 class="media-heading">Kenneth Ross</h4>
-                        <span> Senior Designer </span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="user-chat">
-              <div class="chat-content">
-                <div class="sidebar-content perfect-scrollbar">
-                  <a class="sidebar-back pull-left" href="#" data-toggle-class="chat-open" data-toggle-target="#users"><i class="ti-angle-left"></i> <span>Back</span></a>
-                  <ol class="discussion">
-                    <li class="messages-date">
-                      Sunday, Feb 9, 12:58
-                    </li>
-                    <li class="self">
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          Hi, Nicole
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          How are you?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          Hi, i am good
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="self">
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          Glad to see you ;)
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="messages-date">
-                      Sunday, Feb 9, 13:10
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          What do you think about my new Dashboard?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="messages-date">
-                      Sunday, Feb 9, 15:28
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          Alo...
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          Are you there?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="self">
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          Hi, i am here
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          Your Dashboard is great
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="messages-date">
-                      Friday, Feb 7, 23:39
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          How does the binding and digesting work in AngularJS?, Peter?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="self">
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          oh that's your question?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          little reduntant, no?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          literally we get the question daily
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          I know. I, however, am not a nerd, and want to know
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="self">
-                      <div class="message">
-                        <div class="message-name">
-                          Peter Clark
-                        </div>
-                        <div class="message-text">
-                          for this type of question, wouldn't it be better to try Google?
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-1.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                    <li class="other">
-                      <div class="message">
-                        <div class="message-name">
-                          Nicole Bell
-                        </div>
-                        <div class="message-text">
-                          Lucky for us :)
-                        </div>
-                        <div class="message-avatar">
-                          <img src="assets/images/avatar-2.jpg" alt="">
-                        </div>
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-              </div>
-              <div class="message-bar">
-                <div class="message-inner">
-                  <a class="link icon-only" href="#"><i class="fa fa-camera"></i></a>
-                  <div class="message-area">
-                    <textarea placeholder="Message"></textarea>
-                  </div>
-                  <a class="link" href="#">
-                    Send
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="off-favorites">
-          <div class="users-list">
-            <div class="sidebar-content perfect-scrollbar">
-              <h5 class="sidebar-title">Favorites</h5>
-              <ul class="media-list">
-                <li class="media">
-                  <a href="#">
-                    <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Nicole Bell</h4>
-                      <span> Content Designer </span>
-                    </div>
-                  </a>
-                </li>
-                <li class="media">
-                  <a href="#">
-                    <div class="user-label">
-                      <span class="label label-success">3</span>
-                    </div>
-                    <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Steven Thompson</h4>
-                      <span> Visual Designer </span>
-                    </div>
-                  </a>
-                </li>
-                <li class="media">
-                  <a href="#">
-                    <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Ella Patterson</h4>
-                      <span> Web Editor </span>
-                    </div>
-                  </a>
-                </li>
-                <li class="media">
-                  <a href="#">
-                    <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Kenneth Ross</h4>
-                      <span> Senior Designer </span>
-                    </div>
-                  </a>
-                </li>
-                <li class="media">
-                  <a href="#">
-                    <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Ella Patterson</h4>
-                      <span> Web Editor </span>
-                    </div>
-                  </a>
-                </li>
-                <li class="media">
-                  <a href="#">
-                    <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
-                    <div class="media-body">
-                      <h4 class="media-heading">Kenneth Ross</h4>
-                      <span> Senior Designer </span>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="off-settings">
-          <div class="sidebar-content perfect-scrollbar">
-            <h5 class="sidebar-title">General Settings</h5>
-            <ul class="media-list">
-              <li class="media">
-                <div class="padding-10">
-                  <div class="display-table-cell">
-                    <input type="checkbox" class="js-switch" checked />
-                  </div>
-                  <span class="display-table-cell vertical-align-middle padding-left-10">Enable Notifications</span>
-                </div>
-              </li>
-              <li class="media">
-                <div class="padding-10">
-                  <div class="display-table-cell">
-                    <input type="checkbox" class="js-switch" />
-                  </div>
-                  <span class="display-table-cell vertical-align-middle padding-left-10">Show your E-mail</span>
-                </div>
-              </li>
-              <li class="media">
-                <div class="padding-10">
-                  <div class="display-table-cell">
-                    <input type="checkbox" class="js-switch" checked />
-                  </div>
-                  <span class="display-table-cell vertical-align-middle padding-left-10">Show Offline Users</span>
-                </div>
-              </li>
-              <li class="media">
-                <div class="padding-10">
-                  <div class="display-table-cell">
-                    <input type="checkbox" class="js-switch" checked />
-                  </div>
-                  <span class="display-table-cell vertical-align-middle padding-left-10">E-mail Alerts</span>
-                </div>
-              </li>
-              <li class="media">
-                <div class="padding-10">
-                  <div class="display-table-cell">
-                    <input type="checkbox" class="js-switch" />
-                  </div>
-                  <span class="display-table-cell vertical-align-middle padding-left-10">SMS Alerts</span>
-                </div>
-              </li>
-            </ul>
-            <div class="save-options">
-              <button class="btn btn-success">
-                <i class="icon-settings"></i><span>Save Changes</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end: OFF-SIDEBAR -->
 
-</div>
 <!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/dependencies/bower_components/jquery/dist/jquery.js"></script>
