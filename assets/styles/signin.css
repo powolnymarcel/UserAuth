@@ -75,7 +75,10 @@
   font-size: 14px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
+.green{
+  background-color: #7c64fe;
 
+}
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;

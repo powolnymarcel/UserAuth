@@ -25,13 +25,14 @@
   <div class="loginmodal-container">
     <h1>Login to Your Account</h1><br>
     <form ng-submit="runLogin()">
-      <input type="email" ng-model="email" name="email" placeholder="Email">
-      <input type="password" ng-model="password" name="pass" placeholder="Password">
-      <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+      <input type="email" required="required" ng-model="email" name="email" placeholder="Email">
+      <input type="password" required="required" ng-model="password" name="pass" placeholder="Password">
+      <input type="submit" name="login" class="login loginmodal-submit green" value="Login">
     </form>
 
-    <div class="login-help">
-      <a href="/signup">Register</a>
+    <div class="">
+      <input type="submit" ng-click="register()" name="register" class="login loginmodal-submit" value="Register">
+
     </div>
   </div>
 </div>

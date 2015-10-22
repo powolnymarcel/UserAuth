@@ -2,7 +2,10 @@ angular.module('LoginMod').
   controller('LoginCtrl',['$scope','$http','toastr',function($scope,$http,toastr){
     console.log('Login form lancé')
 
+$scope.register=function(){
+  window.location= '/signup'
 
+}
   $scope.runLogin= function(){
     console.log('Login envoyé par ' + $scope.email)
 
