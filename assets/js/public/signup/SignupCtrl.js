@@ -23,7 +23,9 @@ angular.module('SignupMod').
           }).then(function onSuccess(){
             console.log('Login après register reussi')
             //Si on est loggé et qu'on veut visiter le login FORM ON sera redirigé.
-            window.location= '/dashboard'
+            window.location= '/dashboard';
+
+
           })
         })
         // si erreurs alors on LOG les erreurs

@@ -93,6 +93,21 @@ module.exports = {
         }
       })
     })
+  },
+
+  logout:function(req,res){
+    User.findOne({id:req.session.me},function(err,user){
+      if(err){
+        return res.negotiate(err);
+      }
+      if(!user){
+        //La fn notFound est prédefinnie dans le dossier api/responses/notFound
+        return res.notFound();
+      }
+        req.session.me=null;
+      return res.redirect('/');
+
+    })
   }
 
 

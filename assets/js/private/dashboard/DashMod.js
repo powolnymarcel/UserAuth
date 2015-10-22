@@ -1,1 +1,1 @@
-angular.module('DashMod',[]);
+angular.module('DashMod',['toastr']);

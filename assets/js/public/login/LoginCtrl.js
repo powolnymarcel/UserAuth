@@ -11,12 +11,15 @@ angular.module('LoginMod').
       password: $scope.password
     }).then(function onSuccess(){
       console.log('Login reussi')
+      toastr.success('Informations correcte', 'C\'est juste !',{
+        closeButton: true
+      });
       //Si on est loggé et qu'on veut visiter le login FORM ON sera redirigé.
       window.location= '/dashboard'
     }).catch(function onError(err){
       if (err.status == 400 || 404){
         //TOASTR PERMET D'AVOIR DES MESSAGES FLASH
-          toastr.error('Informations erronée', 'Error',{
+          toastr.error('Information(s) erronée', 'Erreur(s)',{
             closeButton: true
           });
         return;

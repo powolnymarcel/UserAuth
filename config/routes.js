@@ -35,6 +35,7 @@ module.exports.routes = {
   'GET /signup': {    view: 'signup'  },
   'GET /dashboard':   'DashController.checkUser',
   'GET /getUser':   'DashController.getUser',
+  'GET /logout':   'UserController.logout',
 
   // Va aller dans le controleur SERVEUR   userController et lancer la fn signup
   'POST /signup': 'UserController.signup',
