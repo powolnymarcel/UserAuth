@@ -108,6 +108,82 @@ module.exports = {
       return res.redirect('/');
 
     })
+  },
+  editerUser:function(req,res){
+    console.log('Je suis dans le ctrl Serveur pour l\'update');
+    var password= req.param('password');
+    var email = req.param('email');
+    var nom = req.param('nom');
+    var prenom = req.param('prenom');
+    var pseudo = req.param('pseudo');
+    console.log('---------------------------------------------------------------');
+    console.log('Vous etes sur le point d\'éditer les infos suivantes : ');
+    console.log('---------------------------------------------------------------');
+    console.log('Le password est : '+password);
+    console.log('Le email est : '+email);
+    console.log('Le nom est : '+nom);
+    console.log('Le prenom est : '+prenom);
+    console.log('Le pseudo est : '+pseudo);
+    console.log('************************************************************');
+
+// METTRE EN PLACE LE UPDT 
+
+    .exec({
+      error:function(err){
+        return res.negociate(err);
+      },
+      // si réussi on passe à l'etape suivante et on fetch le gravatar
+      success:function(encryptedPassword){
+        console.log("ssssssssssssssssssssssssssssssss");
+        console.log(encryptedPassword);
+        console.log("ssssssssssssssssssssssssssssssss");
+
+        require('machinepack-gravatar').getImageUrl({
+          emailAddress: req.param('email')
+        }).exec({
+          error:function(err) {
+            return res.negociate(err);
+          },
+          // si réussi on passe à l'etape suivante et on crée le user
+
+          success:function(gravatarUrl){
+            // CREER l'utilisateur
+            User.create({
+              nom : req.param('nom'),
+              prenom:req.param('prenom'),
+              pseudo:req.param('pseudo'),
+              email:req.param('email'),
+              password:encryptedPassword,
+              lastLoggedIn: new Date(),
+              gravatarUrl: gravatarUrl
+            },function userCreated(err,newUser){
+              if(err){
+                console.log('Erreur: ' + err);
+                return res.negociate(err);
+              }
+              // Variable session pour dire si le user est loggé
+              console.log('Utilisateur Ajouté');
+              return res.json({
+                id:newUser.id
+              })
+            })
+          }
+        })
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
 

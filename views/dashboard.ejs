@@ -253,7 +253,7 @@
                     </div>
                   </div>
                   <div id="panel_edit_account" class="tab-pane fade">
-                    <form action="#" role="form" id="form">
+                    <form action="#" role="form" id="form" ng-submit="">
                       <fieldset>
                         <legend>
                           Informations
@@ -367,7 +367,7 @@
                           </p>
                         </div>
                         <div class="col-md-4">
-                          <button class="btn btn-primary pull-right" type="submit">
+                          <button class="btn btn-primary pull-right" ng-click="editerUser()" type="submit">
                             Update <i class="fa fa-arrow-circle-right"></i>
                           </button>
                         </div>

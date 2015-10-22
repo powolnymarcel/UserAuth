@@ -5,6 +5,12 @@ angular.module('DashMod').
     console.log(prev);
     console.log("-----------");
 
+
+    $http.get('/getUser')
+      .then(function onSuccess(user){
+        console.log(user);
+        $scope.user= user.data;});
+
     $scope.getUser= function(){
     console.log('Acquisition des infos user');
     $http.get('/getUser')
@@ -35,6 +41,38 @@ angular.module('DashMod').
         progressBar: true
 
       });
+    }
+    $scope.editerUser=function(){
+     alert($scope.user.id);
+
+
+
+
+      $http.put('/editerUser',{
+        email:$scope.user.email,
+        password: $scope.user.password,
+        nom: $scope.user.nom,
+        prenom: $scope.user.prenom,
+        pseudo: $scope.user.pseudo
+      }).then(function onSuccess(){
+        console.log('Mise à jour reussie')
+
+      }).catch(function onError(err){
+        console.log(err);
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     $scope.logout= function() {
       toastr.danger('Deconnexion',{
