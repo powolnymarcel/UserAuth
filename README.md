@@ -1,3 +1,4 @@
+* l'app est configurée pour fonctionner avec mongoLab.
 #Requis pour lancer l'app:
 <ul>
 <li>git</li>
