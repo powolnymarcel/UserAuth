@@ -56,9 +56,12 @@ angular.module('DashMod').
         id: $scope.user.id
       }).then(function onSuccess(){
         console.log('Mise à jour reussie')
+        alert('a');
 
       }).catch(function onError(err){
         console.log(err);
+        alert('b');
+
       })
     };
 
@@ -68,22 +71,16 @@ angular.module('DashMod').
         closeButton: true,
         progressBar: true
       });
-    }
-
+    };
     $scope.supprimerCompte = function(){
-
       if(confirm('!!! Attention: Operation irréversible !!!')){
-
         var id = $scope.user.id;
-
         ////////////////////////////////////////////// FIXER LE REDIRECT !!!!!!!!!!!!!!!!
        $http.delete('/delete/'+id).then(function(err,req){
-
+           // Le then reçoit le code 200 de la part du serveur donc il sait que tout va bien, donc le then est executéé pour un redirec
+           window.location.href = '/';
          }
-
        );
-
-
     }
   }
 

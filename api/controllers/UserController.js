@@ -115,6 +115,19 @@ module.exports = {
 
     console.log('Je suis dans le ctrl Serveur pour l\'update');
     var password= req.param('password');
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log(password);
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+
+    console.log(req.body.password);
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+
+
     var email = req.param('email');
     var nom = req.param('nom');
     var prenom = req.param('prenom');
@@ -146,40 +159,43 @@ module.exports = {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    var Passwords = require('machinepack-passwords');
+        var Passwords = require('machinepack-passwords');
 
-    Passwords.encryptPassword({
-      password:req.body.password
-    }).exec({
-      error:function(err){
-        return res.negociate(err);
-      },
-      // si réussi on passe à l'etape suivante et on fetch le gravatar
-      success:function(encryptedPassword){
-        var nouvelleVAleurs={
-          "email": req.body.email,
-          "nom": req.body.nom,
-          "prenom": req.body.prenom,
-          "password": encryptedPassword,
-          "pseudo": req.body.pseudo
-        }
+        Passwords.encryptPassword({
+          password:req.body.password
+        }).exec({
+          error:function(err){
+            return res.negociate(err);
+          },
+          // si réussi on passe à l'etape suivante et on fetch le gravatar
+          success:function(encryptedPassword){
+            var nouvelleVAleurs={
+              "email": req.body.email,
+              "nom": req.body.nom,
+              "prenom": req.body.prenom,
+              "password": encryptedPassword,
+              "pseudo": req.body.pseudo
+            };
 
 
-        User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
+            User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
 
-          if (err) {
-            // handle error here- e.g. `res.serverError(err);`
-            console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')+res.serverError(err);
+              if (err) {
+                // handle error here- e.g. `res.serverError(err);`
+                console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')+res.serverError(err);
 
-            return;
+                return;
+              }
+
+              console.log('Updated user to have name ' + updated);
+            });
+
+
           }
-
-          console.log('Updated user to have name ' + updated);
         });
 
 
-      }
-    })
+
 
 //***************************************************************** AUTRES METHODE ESSAYEE
 // ***************************************************************************************************
@@ -289,21 +305,18 @@ module.exports = {
    //  }
    // })
   },
-delete:function(req,res){
-  console.log('Je delete !!!!!')
+  delete:function(req,res){
+    console.log('Je delete !!!!!')
 
-  var id = req.param('id');
-  User.destroy({id:id}).exec(function deleteCB(err){
-    console.log('User supprimé');
+    var id = req.param('id');
+    User.destroy({id:id}).exec(function deleteCB(err){
+      console.log('User supprimé');
+      req.session.me=null
+// J'envoie un code 200 pour indiquer que ça s'est bien passé
+      return res.send(200);
 
-    req.session.me=null
 
-    ////////////////////////////////////////////// FIXER LE REDIRECT !!!!!!!!!!!!!!!!
-    if(!req.session.me){
-      console.log('Acces impossible, vous n\'etes pas loggé')
-      return res.view('login')
-    }  });
-}
-
+        });
+  }
 };
 
