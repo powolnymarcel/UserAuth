@@ -1,3 +1,6 @@
+#Demo
+<a href="https://heroku-sails-userauth.herokuapp.com">https://heroku-sails-userauth.herokuapp.com</a>
+
 * l'app est configurée pour fonctionner avec mongoLab.
 #Requis pour lancer l'app:
 <ul>
