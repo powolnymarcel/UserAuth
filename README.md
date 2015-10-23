@@ -17,7 +17,7 @@ Voir résultat sur localhost:1337
 <hr>
 #TODO
 <ul>
-<li>Realiser l'édition</li>
+<li> <strike>Realiser l'édition </strike></li>
 <li>Mettre de l'ordre dans le readMe</li>
 </ul>
 

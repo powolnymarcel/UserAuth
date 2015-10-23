@@ -142,50 +142,10 @@ module.exports = {
 
 
 
-    // User.findOneById(req.body.id).done(function (err, user) {
-    //   if (err) {
-    //     return fn(null, null);
-    //   } else {
-    //     user.email = req.body.email;
-    //     user.save(function(error) {
-    //      if(error) {
-    //        // do something with the error.
-    //      } else {
-    //        // value saved!
-    //        req.send(user);
-    //      }
-    //       }
-    //     )
-    //   }
-    // })
+///////////////////////////////////CECI FONCTIONNE YESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS !!!!!!!!!!!!!!!!!!
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-        //  var user = User.findOneById(req.body.id,req.body).done(function(error, user) {
-  //    if(error) {
-  //      // do something with the error.
-  //    }
-//
-  //    if(req.body.email) {
-  //      // validate whether the email address is valid?
-//
-  //      // Then save it to the object.
-  //      user.email = req.body.email;
-  //    }
-  //    // Repeat for each eligible attribute, etc.
-//
-  //    user.save(function(error) {
-  //      if(error) {
-  //        // do something with the error.
-  //      } else {
-  //        // value saved!
-  //        req.send(user);
-  //      }
-  //    });
-  //  });
-//
-//
     var Passwords = require('machinepack-passwords');
 
     Passwords.encryptPassword({
@@ -196,8 +156,6 @@ module.exports = {
       },
       // si réussi on passe à l'etape suivante et on fetch le gravatar
       success:function(encryptedPassword){
-
-
         var nouvelleVAleurs={
           "email": req.body.email,
           "nom": req.body.nom,
@@ -206,9 +164,6 @@ module.exports = {
           "pseudo": req.body.pseudo
         }
 
-
-//CECI FONCTIONNE !!!!!!!!!!!!!!!!!!
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
 
@@ -226,6 +181,50 @@ module.exports = {
       }
     })
 
+//***************************************************************** AUTRES METHODE ESSAYEE
+// ***************************************************************************************************
+    // User.findOneById(req.body.id).done(function (err, user) {
+    //   if (err) {
+    //     return fn(null, null);
+    //   } else {
+    //     user.email = req.body.email;
+    //     user.save(function(error) {
+    //      if(error) {
+    //        // do something with the error.
+    //      } else {
+    //        // value saved!
+    //        req.send(user);
+    //      }
+    //       }
+    //     )
+    //   }
+    // })
+
+// ***************************************************************************************************
+    //  var user = User.findOneById(req.body.id,req.body).done(function(error, user) {
+    //    if(error) {
+    //      // do something with the error.
+    //    }
+//
+    //    if(req.body.email) {
+    //      // validate whether the email address is valid?
+//
+    //      // Then save it to the object.
+    //      user.email = req.body.email;
+    //    }
+    //    // Repeat for each eligible attribute, etc.
+//
+    //    user.save(function(error) {
+    //      if(error) {
+    //        // do something with the error.
+    //      } else {
+    //        // value saved!
+    //        req.send(user);
+    //      }
+    //    });
+    //  });
+//
+//
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
        //       User.update({
@@ -289,19 +288,6 @@ module.exports = {
    //    })
    //  }
    // })
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
 
 
