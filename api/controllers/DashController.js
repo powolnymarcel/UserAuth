@@ -21,7 +21,8 @@ module.exports = {
 
 
   getUser:function(req,res){
-    console.log('FOnction getUser executée !!!');
+    date = new Date();
+    console.log('FOnction getUser executée !!! ----->>> ' + date);
 
     User.findOne({id: req.session.me},function(err,user){
       if(err){

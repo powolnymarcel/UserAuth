@@ -159,21 +159,21 @@ module.exports = {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        var Passwords = require('machinepack-passwords');
+    //  var Passwords = require('machinepack-passwords');
 
-        Passwords.encryptPassword({
-          password:req.body.password
-        }).exec({
-          error:function(err){
-            return res.negociate(err);
-          },
-          // si réussi on passe à l'etape suivante et on fetch le gravatar
-          success:function(encryptedPassword){
-            var nouvelleVAleurs={
+    //  Passwords.encryptPassword({
+    //    password:req.body.password
+    //  }).exec({
+    //    error:function(err){
+    //      return res.negociate(err);
+    //    },
+    //    // si réussi on passe à l'etape suivante et on fetch le gravatar
+    //    success:function(encryptedPassword){
+           var nouvelleVAleurs={
               "email": req.body.email,
               "nom": req.body.nom,
               "prenom": req.body.prenom,
-              "password": encryptedPassword,
+             // "password": encryptedPassword,
               "pseudo": req.body.pseudo
             };
 
@@ -191,8 +191,8 @@ module.exports = {
             });
 
 
-          }
-        });
+       //   }
+       // });
 
 
 
@@ -306,11 +306,11 @@ module.exports = {
    // })
   },
   delete:function(req,res){
-    console.log('Je delete !!!!!')
+    console.log('Utilisateur a confirmé donc -> Je le supprime !!!!!')
 
     var id = req.param('id');
     User.destroy({id:id}).exec(function deleteCB(err){
-      console.log('User supprimé');
+      console.log('User supprimé, retour en arrière impossible.');
       req.session.me=null
 // J'envoie un code 200 pour indiquer que ça s'est bien passé
       return res.send(200);
