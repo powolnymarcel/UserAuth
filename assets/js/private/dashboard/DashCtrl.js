@@ -66,6 +66,10 @@ angular.module('DashMod').
     };
 
 
+
+
+
+
     $scope.logout= function() {
       toastr.danger('Deconnexion',{
         closeButton: true,

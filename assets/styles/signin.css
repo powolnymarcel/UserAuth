@@ -100,3 +100,6 @@
 .login-help{
   font-size: 12px;
 }
+.thumb{
+  min-height: 200px;
+}

@@ -7,7 +7,7 @@
 <!--<![endif]-->
 <!-- start: HEAD -->
 <head>
-  <title>Auth App</title>
+  <title>DashBoard</title>
   <!-- start: META -->
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta charset="utf-8" />
@@ -56,7 +56,7 @@
                 <span><a href="/logout" ng-click="logout()" class="btn btn-md btn-danger" >LOGOUT</a></span>
               </li>
               <li class="active">
-                <span>User Profile</span>
+                <span>Profil Utilisateur</span>
               </li>
             </ol>
           </div>
@@ -244,7 +244,6 @@
                             <tr>
                               <td>Supprimer le compte (totallement!)</td>
                               <td><a class="btn btn-sm btn-danger" ng-click="supprimerCompte()">Supprimer le compte</a></td>
-                              <td>TODO: faire un redirect vers le login...</td>
                             </tr>
                             </tbody>
                           </table>
@@ -310,7 +309,7 @@
                               Password crypté
                               </label>
 																	<span class="input-icon">
-																		<input class="form-control" disabled ng-model="user.password" type="text" >
+																		<input class="form-control" disabled ng-model="user.password" type="password" >
                                     <i class="fa fa-twitter"></i> </span>
                             </div>
                             <div class="form-group">
@@ -387,11 +386,15 @@
       </div>
     </div>
   </div>
+
+
+
+
   <!-- start: FOOTER -->
   <footer class="container">
     <div class="footer-inner">
       <div class="pull-left">
-        &copy; <span class="current-year"></span><span class="text-bold text-uppercase">ClipTheme</span>. <span>All rights reserved</span>
+        &copy; <span class="current-year"></span><span class="text-bold text-uppercase">Template</span>. <span>All rights reserved to it's owner... whoever that is...</span>
       </div>
     </div>
   </footer>

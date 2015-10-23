@@ -61,7 +61,8 @@ module.exports.connections = {
     host: 'ds043694.mongolab.com',
     port: 43694,
     //C'est pas un de mes vrai mots de passe ;-), il faut encore rentrer sur mongoLab :-P
-    //Not one of my real password ;)
+    //Not my real password & login ;)
+    //But still, you can destroy the DB .... Don't do that !
     user: 'userauth',
      password: 'userauth',
      database: 'userauth'
