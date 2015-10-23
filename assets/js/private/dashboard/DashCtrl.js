@@ -53,7 +53,8 @@ angular.module('DashMod').
         password: $scope.user.password,
         nom: $scope.user.nom,
         prenom: $scope.user.prenom,
-        pseudo: $scope.user.pseudo
+        pseudo: $scope.user.pseudo,
+        id: $scope.user.id
       }).then(function onSuccess(){
         console.log('Mise à jour reussie')
 
