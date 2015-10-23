@@ -42,7 +42,8 @@ module.exports.routes = {
   'PUT /editerUser':'UserController.editerUser',
   'GET /user': {
     view: 'login'
-  }
+  },
+  'DELETE /delete/:id?':'UserController.delete'
 
   /***************************************************************************
   *                                                                          *

@@ -288,8 +288,16 @@ module.exports = {
    //    })
    //  }
    // })
-  }
+  },
+delete:function(req,res){
+  console.log('Je delete ahahahahah !!!!!!')
+  var id = req.param('id');
+  console.log(id);
 
+  User.destroy({id:id}).exec(function deleteCB(err){
+    console.log('The record has been deleted');
+  });
+}
 
 };
 

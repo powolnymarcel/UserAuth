@@ -69,4 +69,13 @@ angular.module('DashMod').
         progressBar: true
       });
     }
+
+    $scope.supprimerCompte = function(){
+      alert($scope.user.id);
+     var id = $scope.user.id;
+      $http.delete('/delete/'+id);
+    }
+
     }]);
+
+
