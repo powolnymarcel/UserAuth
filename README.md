@@ -3,6 +3,13 @@
 
 #Probleme avec edit ....... Working in it ...
 
+#INFOS sur heroku(lenteur offre FREE)
+Sleeping
+
+If an app has a web dyno, and that web dyno receives no traffic in a 30 minute period, the web dyno will sleep. In addition to the web dyno sleeping, the worker dyno (if present) will also sleep.
+
+If a sleeping web dyno receives web traffic, it will become active again after a very short delay. If the app has a worker dyno that was scaled up before sleeping, it will be scaled up again too.
+
 * l'app est configurée pour fonctionner avec mongoLab.
 #Requis pour lancer l'app:
 <ul>

@@ -14,6 +14,7 @@ $scope.register=function(){
       password: $scope.password
     }).then(function onSuccess(){
       console.log('Login reussi')
+      alert('alert');
       toastr.success('Informations correcte', 'C\'est juste !',{
         closeButton: true
       });
