@@ -32,7 +32,7 @@ angular.module('DashMod').
       .catch(function onError(err){
         console.log(err);
       })
-    }
+    };
 
     $scope.editer= function() {
       toastr.warning('Editer votre profil', 'Edition!',{
@@ -41,12 +41,11 @@ angular.module('DashMod').
         progressBar: true
 
       });
-    }
+    };
+
+// EDITION USER
     $scope.editerUser=function(){
-     alert($scope.user.id);
-
-
-
+   //  alert($scope.user.id);
 
       $http.put('/editerUser',{
         email:$scope.user.email,
@@ -61,24 +60,13 @@ angular.module('DashMod').
       }).catch(function onError(err){
         console.log(err);
       })
+    };
 
 
-
-
-
-
-
-
-
-
-
-
-
-    }
     $scope.logout= function() {
       toastr.danger('Deconnexion',{
         closeButton: true,
         progressBar: true
       });
     }
-    }])
+    }]);
