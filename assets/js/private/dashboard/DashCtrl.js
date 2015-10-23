@@ -71,10 +71,21 @@ angular.module('DashMod').
     }
 
     $scope.supprimerCompte = function(){
-      alert($scope.user.id);
-     var id = $scope.user.id;
-      $http.delete('/delete/'+id);
+
+      if(confirm('!!! Attention: Operation irréversible !!!')){
+
+        var id = $scope.user.id;
+
+        ////////////////////////////////////////////// FIXER LE REDIRECT !!!!!!!!!!!!!!!!
+       $http.delete('/delete/'+id).then(function(err,req){
+
+         }
+
+       );
+
+
     }
+  }
 
     }]);
 

@@ -290,13 +290,19 @@ module.exports = {
    // })
   },
 delete:function(req,res){
-  console.log('Je delete ahahahahah !!!!!!')
-  var id = req.param('id');
-  console.log(id);
+  console.log('Je delete !!!!!')
 
+  var id = req.param('id');
   User.destroy({id:id}).exec(function deleteCB(err){
-    console.log('The record has been deleted');
-  });
+    console.log('User supprimé');
+
+    req.session.me=null
+
+    ////////////////////////////////////////////// FIXER LE REDIRECT !!!!!!!!!!!!!!!!
+    if(!req.session.me){
+      console.log('Acces impossible, vous n\'etes pas loggé')
+      return res.view('login')
+    }  });
 }
 
 };
