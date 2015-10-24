@@ -1,5 +1,5 @@
 #Demo
-<a href="https://heroku-sails-userauth.herokuapp.com">https://heroku-sails-userauth.herokuapp.com</a>
+<a href="http://appuser.herokuapp.com/">http://appuser.herokuapp.com/</a>
 
 #Probleme avec edit ....... Working in it ...
 
