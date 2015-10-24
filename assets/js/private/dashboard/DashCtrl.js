@@ -44,6 +44,8 @@ angular.module('DashMod').
         pseudo: $scope.user.pseudo,
         id: $scope.user.id,
         demo: $scope.user.demo
+      }).then(function(err,res){
+        alert('tout est ok');
       })
     };
 // LOGOUT SESSION USER

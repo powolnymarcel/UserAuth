@@ -130,7 +130,7 @@ module.exports = {
               if (err) {
                 // handle error here- e.g. `res.serverError(err);`
                 console.log('Error')+res.serverError(err);
-                return;
+                return res.redirect('/dashboard');
               }
 
               console.log('************************************************************');
