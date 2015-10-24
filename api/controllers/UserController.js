@@ -108,94 +108,36 @@ module.exports = {
     })
   },
   editerUser:function(req,res){
+                console.log('************************************************************');
+                console.log('************************************************************');
+                console.log('Je suis dans le Serveur UserController.js pour l\'update');
+                console.log('************************************************************');
+                console.log('************************************************************');
 
-  //  ObjectID = require('sails-mongo/node_modules/mongodb').ObjectID;
-  //  var o_id = new ObjectID(req.param('id'));
-  //  console.log(o_id );
-
-    console.log('Je suis dans le ctrl Serveur pour l\'update');
-    var password= req.param('password');
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log(password);
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-
-    console.log(req.body.password);
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-    console.log("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-
-
-    var email = req.param('email');
-    var nom = req.param('nom');
-    var prenom = req.param('prenom');
-    var pseudo = req.param('pseudo');
-    var id = req.param('id');
-    console.log('---------------------------------------------------------------');
-    console.log('Vous etes sur le point d\'éditer les infos suivantes : ');
-    console.log('---------------------------------------------------------------');
-    console.log('Le password est : '+password);
-    console.log('Le email est : '+email);
-    console.log('Le nom est : '+nom);
-    console.log('Le prenom est : '+prenom);
-    console.log('Le pseudo est : '+pseudo);
-    console.log('Le ID est : '+id);
-    console.log('************************************************************');
-    console.log('************************************************************');
-    console.log(req.body);
-    console.log('************************************************************');
-    console.log('************************************************************');
-
-
-
-
-
-
-
-
-///////////////////////////////////CECI FONCTIONNE plus mais je sais pas pq!!! !!!!!!!!!!!!!!!!!!
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    //  var Passwords = require('machinepack-passwords');
-
-    //  Passwords.encryptPassword({
-    //    password:req.body.password
-    //  }).exec({
-    //    error:function(err){
-    //      return res.negociate(err);
-    //    },
-    //    // si réussi on passe à l'etape suivante et on fetch le gravatar
-    //    success:function(encryptedPassword){
+    var id =req.body.id;
+    var leChangementCmaintenant = function(){
            var nouvelleVAleurs={
               "email": req.body.email,
               "nom": req.body.nom,
               "prenom": req.body.prenom,
-             // "password": encryptedPassword,
               "pseudo": req.body.pseudo
             };
-
-
             User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
-
               if (err) {
                 // handle error here- e.g. `res.serverError(err);`
                 console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')+res.serverError(err);
-
                 return;
               }
-
-              console.log('Updated user to have name ' + updated);
+              
+              console.log('************************************************************');
+              console.log('************************************************************');
+              console.log('Nom de l\'utilisateur mis à jour : ' + updated[0].nom);
+              console.log('Je SORS du Serveur UserController.js fin d\'update');
+              console.log('************************************************************');
+              console.log('************************************************************');
             });
-
-
-       //   }
-       // });
-
-
-
+        }
+    leChangementCmaintenant();
 
 //***************************************************************** AUTRES METHODE ESSAYEE
 // ***************************************************************************************************

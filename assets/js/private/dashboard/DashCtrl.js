@@ -1,11 +1,5 @@
 angular.module('DashMod').
   controller('DashCtrl',['$scope','$http','toastr',function($scope,$http,toastr){
-    console.log("-----------");
-    var prev = window.location.href;
-    console.log(prev);
-    console.log("-----------");
-
-
     $http.get('/getUser')
       .then(function onSuccess(user){
         console.log(user);
@@ -34,6 +28,7 @@ angular.module('DashMod').
       })
     };
 
+// Message flash au click sur le lien editer
     $scope.editer= function() {
       toastr.warning('Editer votre profil', 'Edition!',{
         closeButton: true,
@@ -42,40 +37,24 @@ angular.module('DashMod').
 
       });
     };
-
 // EDITION USER
     $scope.editerUser=function(){
-   //  alert($scope.user.id);
-
       $http.put('/editerUser',{
         email:$scope.user.email,
-        password: $scope.user.password,
         nom: $scope.user.nom,
         prenom: $scope.user.prenom,
         pseudo: $scope.user.pseudo,
         id: $scope.user.id
-      }).then(function onSuccess(){
-        console.log('Mise à jour reussie')
-        alert('a');
-
-      }).catch(function onError(err){
-        console.log(err);
-        alert('b');
-
       })
     };
-
-
-
-
-
-
+// LOGOUT SESSION USER
     $scope.logout= function() {
       toastr.danger('Deconnexion',{
         closeButton: true,
         progressBar: true
       });
     };
+// Suppression USER
     $scope.supprimerCompte = function(){
       if(confirm('!!! Attention: Operation irréversible !!!')){
         var id = $scope.user.id;
@@ -86,8 +65,27 @@ angular.module('DashMod').
          }
        );
     }
-  }
+  };
+// Changement mot de passe USER
 
-    }]);
+    $scope.changePassword = function(){
+      alert($scope.password);
+    };
+// ****************************************************DIRECTIVE**************** POUR VERIF DU MATCH DES 2 PASSWORD
+    }])
+  .directive('pwCheck', [function () {
+    return {
+      require: 'ngModel',
+      link: function (scope, elem, attrs, ctrl) {
+        var firstPassword = '#' + attrs.pwCheck;
+        elem.add(firstPassword).on('keyup', function () {
+          scope.$apply(function () {
+            var v = elem.val()===$(firstPassword).val();
+            ctrl.$setValidity('pwmatch', v);
+          });
+        });
+      }
+    }
+  }]);
 
 
