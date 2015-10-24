@@ -1,10 +1,10 @@
 angular.module('DashMod').
   controller('DashCtrl',['$scope','$http','toastr',function($scope,$http,toastr){
 
-    $http.get('/getUser')
-      .then(function onSuccess(user){
-        console.log(user);
-        $scope.user= user.data;});
+  //  $http.get('/getUser')
+  //    .then(function onSuccess(user){
+  //      console.log(user);
+  //      $scope.user= user.data;});
 
 
 
