@@ -1,11 +1,6 @@
 angular.module('DashMod').
   controller('DashCtrl',['$scope','$http','toastr',function($scope,$http,toastr){
 
-    $http.get('/getUser',function onSuccess(user){
-        console.log(user);
-        $scope.user= user.data;});
-
-
 
     $scope.getUser= function(){
       $http.get('/getUser')
@@ -79,7 +74,16 @@ angular.module('DashMod').
     alert('bientot mis en place')
     };
 // ****************************************************DIRECTIVE**************** POUR VERIF DU MATCH DES 2 PASSWORD
-    }])
+
+
+
+    $http.get('/getUser',function onSuccess(user){
+      console.log(user);
+      $scope.user= user.data;});
+
+
+
+  }])
   .directive('pwCheck', [function () {
     return {
       require: 'ngModel',
