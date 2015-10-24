@@ -78,7 +78,8 @@ angular.module('DashMod').
 // Changement mot de passe USER
 
     $scope.changePassword = function(){
-      alert($scope.password);
+      //alert($scope.password);
+    alert('bientot mis en place')
     };
 // ****************************************************DIRECTIVE**************** POUR VERIF DU MATCH DES 2 PASSWORD
     }])
