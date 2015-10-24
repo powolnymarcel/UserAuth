@@ -109,6 +109,9 @@ module.exports = {
     })
   },
   editerUser:function(req,res){
+
+    console.log('FOnction editerUser executée !!! ----->>> ' + date);
+
                 console.log('************************************************************');
                 console.log('************************************************************');
                 console.log('Je suis dans le Serveur UserController.js pour l\'update');
