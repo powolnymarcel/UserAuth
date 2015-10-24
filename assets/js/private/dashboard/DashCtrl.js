@@ -44,7 +44,8 @@ angular.module('DashMod').
         nom: $scope.user.nom,
         prenom: $scope.user.prenom,
         pseudo: $scope.user.pseudo,
-        id: $scope.user.id
+        id: $scope.user.id,
+        demo: $scope.user.demo
       })
     };
 // LOGOUT SESSION USER
@@ -58,12 +59,20 @@ angular.module('DashMod').
     $scope.supprimerCompte = function(){
       if(confirm('!!! Attention: Operation irréversible !!!')){
         var id = $scope.user.id;
+        var demo = $scope.user.demo;
+        if(!demo){
+          console.log('111111111111111111111111');
+
+          $http.delete('/delete/'+id,{demo:demo}).then(function(err,req){
+            // Le then reçoit le code 200 de la part du serveur donc il sait que tout va bien, donc le then est executéé pour un redirec
+            window.location.href = '/';
+          });
+        }
+        else{
+          alert('Negatif! Meme en bidouillant le code ^_^ \nBut if you are smart, you can find a way ;)' );
+        }
         ////////////////////////////////////////////// FIXER LE REDIRECT !!!!!!!!!!!!!!!!
-       $http.delete('/delete/'+id).then(function(err,req){
-           // Le then reçoit le code 200 de la part du serveur donc il sait que tout va bien, donc le then est executéé pour un redirec
-           window.location.href = '/';
-         }
-       );
+
     }
   };
 // Changement mot de passe USER

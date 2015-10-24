@@ -50,7 +50,7 @@
         <section id="page-title">
           <div class="row">
             <div class="col-sm-8">
-              <h1 class="mainTitle">User Profile</h1>
+              <h1 class="mainTitle">Votre Profil</h1>
             </div>
             <ol class="breadcrumb">
               <li>
@@ -96,7 +96,7 @@
                             <h4>{{user.nom}}</h4>
                             <div class="fileinput fileinput-new" data-provides="fileinput">
                               <div class="user-image">
-                                <div class="fileinput-new thumbnail"><img src="http://www.gravatar.com/avatar/152fc9c9c01fd07835fe3644138075b7" alt="">
+                                <div class="fileinput-new thumbnail"><img ng-src="{{user.gravatarUrl}}" alt="">
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                 <div class="user-image-buttons">
@@ -229,7 +229,7 @@
                     <form action="#" role="form" id="form" ng-submit="">
                       <fieldset>
                         <legend>
-                          Informations
+                          Informations <span ng-show="user.demo" style="color: red"> (Impossible de modifier les donnéees démo !)</span>
                         </legend>
                         <div class="row">
                           <div class="col-md-6">
@@ -237,27 +237,28 @@
                               <label class="control-label">
                                 Nom*
                               </label>
-                              <input type="text" placeholder="Peter" ng-model="user.nom" class="form-control" id="firstname" name="firstname">
+                              <input type="text" placeholder="Nom" required="required" ng-model="user.nom" class="form-control" id="firstname" name="firstname">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
                                 Prenom*
                               </label>
-                              <input type="text" placeholder="Clark" ng-model="user.prenom" class="form-control" id="lastname" name="lastname">
+                              <input type="text" placeholder="prenom" required="required" ng-model="user.prenom" class="form-control" id="lastname" name="lastname">
+                              <input type="hidden" ng-model="user.demo" value="{{user.demo}}" class="form-control" id="demo" name="demo">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
                                 Email Address*
                               </label>
-                              <input type="email" placeholder="peter@example.com" ng-model="user.email"  class="form-control" id="email" name="email">
+                              <input type="email" placeholder="email@exemple.com" required="required" ng-model="user.email"  class="form-control" id="email" name="email">
                             </div>
                             <div class="form-group">
                               <label class="control-label">
                                 Pseudo*
                               </label>
-                              <input type="text" placeholder="pseudo" ng-model="user.pseudo" class="form-control" id="phone" name="email">
+                              <input type="text" placeholder="pseudo" required="required" ng-model="user.pseudo" class="form-control" id="phone" name="email">
                             </div>
-                            <button class="btn btn-primary pull-right" ng-click="editerUser()" type="submit">
+                            <button class="btn btn-primary pull-right" ng-hide="user.demo" ng-click="editerUser()" type="submit">
                               Update <i class="fa fa-arrow-circle-right"></i>
                             </button>
                           </div>
@@ -308,7 +309,7 @@
                             </div>
                             <div class="form-group">
                               <label class="control-label">
-                                Votre ID:
+                                Votre ID MongoDB:
                               </label>
 																	<span class="input-icon">
 																		<input class="form-control" disabled ng-model="user.id" type="text" >
@@ -320,7 +321,6 @@
                         <div class="col-md-12">
                           <div>
                             *Champs requis
-                            <hr>
                           </div>
                         </div>
                       </div>
@@ -345,7 +345,7 @@
   <footer class="container">
     <div class="footer-inner">
       <div class="pull-left">
-        &copy; <span class="current-year"></span><span class="text-bold text-uppercase">Template</span>. <span>All rights reserved to it's owner... whoever that is...</span>
+        &copy; <span class="current-year"></span><span class="text-bold text-uppercase"> Template</span>. <span>All rights reserved to it's owner... whoever that is...</span>
       </div>
     </div>
   </footer>

@@ -43,7 +43,8 @@ module.exports = {
               email:req.param('email'),
               password:encryptedPassword,
               lastLoggedIn: new Date(),
-              gravatarUrl: gravatarUrl
+              gravatarUrl: gravatarUrl,
+              demo: false
             },function userCreated(err,newUser){
               if(err){
                 console.log('Erreur: ' + err);
@@ -122,13 +123,14 @@ module.exports = {
               "prenom": req.body.prenom,
               "pseudo": req.body.pseudo
             };
+      if(req.body.demo===false){
             User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
               if (err) {
                 // handle error here- e.g. `res.serverError(err);`
                 console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')+res.serverError(err);
                 return;
               }
-              
+
               console.log('************************************************************');
               console.log('************************************************************');
               console.log('Nom de l\'utilisateur mis à jour : ' + updated[0].nom);
@@ -136,6 +138,11 @@ module.exports = {
               console.log('************************************************************');
               console.log('************************************************************');
             });
+      }
+      else{
+        return;
+      }
+
         }
     leChangementCmaintenant();
 
@@ -248,17 +255,39 @@ module.exports = {
    // })
   },
   delete:function(req,res){
-    console.log('Utilisateur a confirmé donc -> Je le supprime !!!!!')
-
     var id = req.param('id');
-    User.destroy({id:id}).exec(function deleteCB(err){
-      console.log('User supprimé, retour en arrière impossible.');
-      req.session.me=null
-// J'envoie un code 200 pour indiquer que ça s'est bien passé
-      return res.send(200);
+
+     User.findOne({id:id}).exec(function findOneCB(err, responseDeMongoDB){
+      console.log('Je vois que c est '+responseDeMongoDB.demo);
+      var demo = responseDeMongoDB.demo;
+
+       if(demo===false){
+         console.log('Utilisateur a confirmé donc -> Je le supprime !!!!!')
+         User.destroy({id:id}).exec(function deleteCB(err){
+           console.log('User supprimé, retour en arrière impossible.');
+           req.session.me=null
+           // J'envoie un code 200 pour indiquer que ça s'est bien passé
+           return res.send(200);
+         });
+       }
+       else {
+         return;
+       }
+    });
 
 
-        });
+   //if(demo===false){
+   //  console.log('Utilisateur a confirmé donc -> Je le supprime !!!!!')
+   //User.destroy({id:id}).exec(function deleteCB(err){
+   //  console.log('User supprimé, retour en arrière impossible.');
+   //  req.session.me=null
+   //    // J'envoie un code 200 pour indiquer que ça s'est bien passé
+   //  return res.send(200);
+   //    });
+   //}
+   //else{
+   //  return;
+   //}
   }
 };
 
