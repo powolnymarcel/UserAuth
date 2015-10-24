@@ -130,7 +130,7 @@ module.exports = {
             User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
               if (err) {
                 // handle error here- e.g. `res.serverError(err);`
-                console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')+res.serverError(err);
+                console.log('Error')+res.serverError(err);
                 return;
               }
 
@@ -149,8 +149,8 @@ module.exports = {
         }
     leChangementCmaintenant();
 
-//***************************************************************** AUTRES METHODE ESSAYEE
-// ***************************************************************************************************
+//*******************  AUTRES METHODE ESSAYEE
+// ********************************************************************
     // User.findOneById(req.body.id).done(function (err, user) {
     //   if (err) {
     //     return fn(null, null);
