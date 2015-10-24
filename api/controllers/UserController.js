@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	  // Création de la fonction signup
+	  // Création de la fonction signup Enregistrement user
 
   signup:function(req,res){
     console.log("backendSignUp")
@@ -22,10 +22,6 @@ module.exports = {
       },
       // si réussi on passe à l'etape suivante et on fetch le gravatar
       success:function(encryptedPassword){
-        console.log("ssssssssssssssssssssssssssssssss");
-        console.log(encryptedPassword);
-        console.log("ssssssssssssssssssssssssssssssss");
-
         require('machinepack-gravatar').getImageUrl({
           emailAddress: req.param('email')
         }).exec({
@@ -33,7 +29,6 @@ module.exports = {
             return res.negociate(err);
           },
           // si réussi on passe à l'etape suivante et on crée le user
-
           success:function(gravatarUrl){
             // CREER l'utilisateur
             User.create({
@@ -61,6 +56,9 @@ module.exports = {
       }
     })
   },
+
+  // Création de la fonction login login user
+
   login: function(req,res){
     // Valider l'user
     User.findOne({
@@ -126,6 +124,7 @@ module.exports = {
               "prenom": req.body.prenom,
               "pseudo": req.body.pseudo
             };
+
       if(req.body.demo===false){
             User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
               if (err) {
