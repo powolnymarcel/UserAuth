@@ -31,34 +31,25 @@ Voir résultat sur localhost:1337
 #TODO
 
 <ul>
-<li> <strike>Realiser l'édition </strike></li>
+<li> <strike>Trouver une solution au probleme d'édition sous certains navigateurs.. </strike></li>
 <li>Mettre de l'ordre dans le readMe</li>
 </ul>
 
-notes :
-Ajout de bbower.json pour indiquer les dépendances nécessaires
-Ajout de .bowerrc pour indiquer le chemin d'installation des dépendances.
-Ajout dans package.json de :
 
- "scripts": {
-    "postinstall": "bower install",
-
-     "dependencies": {
-    "bower": "*",
-    "sails-disk": "^0.10.8"
- ////////////////////////////////////
+#Info
+<hr>
 - Utilise le framework Sails, c'est un framwork MVC qui fonctionne sur le serveur nodeJS
 - Fonctionne très bien avec des interface RESTFULL et les API DATA
+<br>
+<p>Utilisation AngularJS pour le front-end et on fera des requetes sur le serveur Sails</p>
+<p>Utilisation de mongoDB pour le stockage des data + mongoLab.</p>
+<p>Utilisation de angular-toaster, permet de prendre en charge les messages, par exemple si l'utilisateur tape un mauvais</p>
+<p>mot de passe on aura une façon élegante d'indiquer qu'il y a une erreur.</p>
+<p>Approche de GRUNT</p>
 
-Utilisation AngularJS pour le front-end et on fera des requetes sur le serveur Sails
-Utilisation de mongoDB pour le stockage des data + mongoLab.
-Utilisation de angular-toaster, permet de prendre en charge les messages, par exemple si l'utilisateur tape un mauvais
-mot de passe on aura une façon élegante d'indiquer qu'il y a une erreur.
-Approche de GRUNT
-
- //////////////////////////////////////////////////////////        MISE EN PLACE     //////////////////////////////////////////////////////////////////////
-
+#MISE EN PLACE
 Etapes:
+<hr>
 Installation de sails (-g pour installation globale sur le système)
 	npm install -g sails
 creation d'un projet sails
@@ -259,3 +250,14 @@ On implemente toaster dans le LoginMod et LoginCtrl
 
 Ensuite on crée le DASHBOARD USER
 **********************************
+notes :
+Ajout de bbower.json pour indiquer les dépendances nécessaires
+Ajout de .bowerrc pour indiquer le chemin d'installation des dépendances.
+Ajout dans package.json de :
+
+ "scripts": {
+    "postinstall": "bower install",
+
+     "dependencies": {
+    "bower": "*",
+    "sails-disk": "^0.10.8"
