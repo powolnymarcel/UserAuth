@@ -290,6 +290,28 @@ module.exports = {
    //else{
    //  return;
    //}
+  },
+  pwdchange:function(req,res){
+    var id = req.param('id');
+    var password = req.param('password');
+    User.findOne({id:id}).exec(function findOneCB(err, responseDeMongoDB){
+      var demo = responseDeMongoDB.demo;
+      var nouveauPass={
+        "password": req.body.password
+      };
+      if(demo===false){
+        User.update({id:id},nouveauPass).exec(function afterwards(err, updated){
+          if (err) {
+            // handle error here- e.g. `res.serverError(err);`
+            console.log('Error')+res.serverError(err);
+            return res.redirect('/dashboard');
+          }
+        });
+      }
+      else {
+        return;
+      }
+    });
   }
 };
 

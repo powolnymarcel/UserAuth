@@ -70,10 +70,17 @@ angular.module('DashMod').
 // Changement mot de passe USER
 
     $scope.changePassword = function(){
-      //alert($scope.password);
-    alert('bientot mis en place')
+      var id = $scope.user.id;
+      var password = $scope.password;
+      $http.put('/pwdchange',{
+        password:password,
+        id:id
+      }).then(function(err,res){
+        toastr.success('Password changé', 'Info',{
+          closeButton: true
+        });
+      })
     };
-// ****************************************************DIRECTIVE**************** POUR VERIF DU MATCH DES 2 PASSWORD
 
 
 
@@ -81,9 +88,9 @@ angular.module('DashMod').
       console.log(user);
       $scope.user= user.data;});
 
-
-
   }])
+  // ****************************************************DIRECTIVE**************** POUR VERIF DU MATCH DES 2 PASSWORD
+
   .directive('pwCheck', [function () {
     return {
       require: 'ngModel',
