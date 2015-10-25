@@ -1,16 +1,11 @@
 #Demo
 <a href="http://appuser.herokuapp.com/">http://appuser.herokuapp.com/</a>
 
-#Probleme avec edit ....... Working in it ... Working on Google chrome though...
+<h2>Probleme avec edit ....... Working in it ... Working on Google chrome though...</h2>
 
-#INFOS sur heroku(lenteur offre FREE)
-Sleeping
+<h4>INFOS sur heroku(lenteur offre FREE)</h4>
 
-If an app has a web dyno, and that web dyno receives no traffic in a 30 minute period, the web dyno will sleep. In addition to the web dyno sleeping, the worker dyno (if present) will also sleep.
-
-If a sleeping web dyno receives web traffic, it will become active again after a very short delay. If the app has a worker dyno that was scaled up before sleeping, it will be scaled up again too.
-
-* l'app est configurée pour fonctionner avec mongoLab.
+<h1>L'app est configurée pour fonctionner avec mongoLab.</h1>
 #Requis pour lancer l'app:
 <ul>
 <li>git</li>
@@ -46,6 +41,9 @@ Voir résultat sur localhost:1337
 <p>Utilisation de angular-toaster, permet de prendre en charge les messages, par exemple si l'utilisateur tape un mauvais</p>
 <p>mot de passe on aura une façon élegante d'indiquer qu'il y a une erreur.</p>
 <p>Approche de GRUNT</p>
+Heroku Sleeping:
+If an app has a web dyno, and that web dyno receives no traffic in a 30 minute period, the web dyno will sleep. In addition to the web dyno sleeping, the worker dyno (if present) will also sleep.
+If a sleeping web dyno receives web traffic, it will become active again after a very short delay. If the app has a worker dyno that was scaled up before sleeping, it will be scaled up again too.
 
 #MISE EN PLACE
 Etapes:
