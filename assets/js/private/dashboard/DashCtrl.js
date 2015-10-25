@@ -31,6 +31,8 @@ angular.module('DashMod').
     };
 // EDITION USER
     $scope.editerUser=function(){
+
+
       $http.put('/editerUser',{
         email:$scope.user.email,
         nom: $scope.user.nom,
@@ -38,10 +40,40 @@ angular.module('DashMod').
         pseudo: $scope.user.pseudo,
         id: $scope.user.id,
         demo: $scope.user.demo
-      }).then(function(err,res){
-        alert('tout est ok');
-      })
+      }).success(function (data, status, headers) {
+alert('okok')      })
+        .error(function (data, status, header, config) {
+          console.log(data);
+          console.log('*******************************');
+          console.log(status);
+          console.log('*******************************');
+          console.log(header);
+          console.log('*******************************');
+          console.log(config);
+          console.log('*******************************');
+          throw new Error("my error message");
+        });
     };
+// Autre version
+   //  // EDITION USER
+   //  $scope.editerUser=function(){
+   //    $http.put('/editerUser',{
+   //      email:$scope.user.email,
+   //      nom: $scope.user.nom,
+   //      prenom: $scope.user.prenom,
+   //      pseudo: $scope.user.pseudo,
+   //      id: $scope.user.id,
+   //      demo: $scope.user.demo
+   //    }) .success(function (data, status, headers) {
+   //      $scope.user= data;
+   //    })
+   //      .error(function (data, status, header, config) {
+   //        $scope.ServerResponse =  htmlDecode("Data: " + data +
+   //        "\n\n\n\nstatus: " + status +
+   //        "\n\n\n\nheaders: " + header +
+   //        "\n\n\n\nconfig: " + config);
+   //      });
+   //  };
 // LOGOUT SESSION USER
     $scope.logout= function() {
       toastr.danger('Deconnexion',{

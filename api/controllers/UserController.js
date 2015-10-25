@@ -107,17 +107,16 @@ module.exports = {
     })
   },
   editerUser:function(req,res){
-
-    console.log('FOnction editerUser executée !!! ----->>> ' + date);
-
-                console.log('************************************************************');
-                console.log('************************************************************');
-                console.log('Je suis dans le Serveur UserController.js pour l\'update');
-                console.log('************************************************************');
-                console.log('************************************************************');
-
+    console.log('************************************************************');
+    console.log('************************************************************');
+    console.log(' 1 FOnction editerUser executée !!! ----->>> ' + date);
+    console.log('************************************************************');
+    console.log('************************************************************');
+    console.log(' 2 Je suis dans le Serveur UserController.js pour l\'update');
+    console.log('************************************************************');
+    console.log('************************************************************');
     var id =req.body.id;
-    var leChangementCmaintenant = function(){
+    var Userupdated = function(){
            var nouvelleVAleurs={
               "email": req.body.email,
               "nom": req.body.nom,
@@ -126,7 +125,7 @@ module.exports = {
             };
 
       if(req.body.demo===false){
-            User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, updated){
+            User.update({id:id},nouvelleVAleurs).exec(function afterwards(err, res){
               if (err) {
                 // handle error here- e.g. `res.serverError(err);`
                 console.log('Error')+res.serverError(err);
@@ -135,10 +134,12 @@ module.exports = {
 
               console.log('************************************************************');
               console.log('************************************************************');
-              console.log('Nom de l\'utilisateur mis à jour : ' + updated[0].nom);
-              console.log('Je SORS du Serveur UserController.js fin d\'update');
+              console.log(' 3 Nom de l\'utilisateur mis à jour : ' + res[0].nom);
+              console.log(' 4 Je sors du Serveur UserController.js fin d\'update !! ----->>> ' + date);
               console.log('************************************************************');
               console.log('************************************************************');
+              return res;
+
             });
       }
       else{
@@ -146,9 +147,9 @@ module.exports = {
       }
 
         }
-    leChangementCmaintenant();
+    Userupdated();
 
-//*******************  AUTRES METHODE ESSAYEE
+//*******************  AUTRES METHODES ESSAYEES
 // ********************************************************************
     // User.findOneById(req.body.id).done(function (err, user) {
     //   if (err) {
@@ -304,17 +305,7 @@ module.exports = {
                 console.log('Error')+res.serverError(err);
                 return res.redirect('/dashboard');
               }
-            });function userCreated(err,newUser){
-                  if(err){
-                    console.log('Erreur: ' + err);
-                    return res.negociate(err);
-                  }
-                  // Variable session pour dire si le user est loggé
-                  console.log('Utilisateur Ajouté');
-                  return res.json({
-                    id:newUser.id
-                  })
-                }
+            })
               }
             })
           }

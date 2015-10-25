@@ -1,7 +1,7 @@
 #Demo
 <a href="http://appuser.herokuapp.com/">http://appuser.herokuapp.com/</a>
 
-#Probleme avec edit ....... Working in it ...
+#Probleme avec edit ....... Working in it ... Working on Google chrome though...
 
 #INFOS sur heroku(lenteur offre FREE)
 Sleeping
