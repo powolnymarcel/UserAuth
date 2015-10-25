@@ -72,14 +72,20 @@ angular.module('DashMod').
     $scope.changePassword = function(){
       var id = $scope.user.id;
       var password = $scope.password;
-      $http.put('/pwdchange',{
-        password:password,
-        id:id
-      }).then(function(err,res){
-        toastr.success('Password changé', 'Info',{
-          closeButton: true
+      var demo = $scope.user.demo;
+      if(!demo) {
+        $http.put('/pwdchange', {
+          password: password,
+          id: id
+        }).then(function (err, res) {
+          toastr.warning('Password changé', 'Info', {
+            closeButton: true
+          });
         });
-      })
+      }
+      else{
+        alert('Negatif! Meme en bidouillant le code ^_^ \nBut if you are smart, you can find a way ;)' );
+      }
     };
 
 

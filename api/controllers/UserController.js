@@ -276,21 +276,9 @@ module.exports = {
          return;
        }
     });
-
-
-   //if(demo===false){
-   //  console.log('Utilisateur a confirmé donc -> Je le supprime !!!!!')
-   //User.destroy({id:id}).exec(function deleteCB(err){
-   //  console.log('User supprimé, retour en arrière impossible.');
-   //  req.session.me=null
-   //    // J'envoie un code 200 pour indiquer que ça s'est bien passé
-   //  return res.send(200);
-   //    });
-   //}
-   //else{
-   //  return;
-   //}
   },
+
+  // Changement de mot de passe
   pwdchange:function(req,res){
     var id = req.param('id');
     var password = req.param('password');
@@ -300,18 +288,37 @@ module.exports = {
         "password": req.body.password
       };
       if(demo===false){
-        User.update({id:id},nouveauPass).exec(function afterwards(err, updated){
-          if (err) {
-            // handle error here- e.g. `res.serverError(err);`
-            console.log('Error')+res.serverError(err);
-            return res.redirect('/dashboard');
+        var Passwords = require('machinepack-passwords');
+        Passwords.encryptPassword({
+          password: password
+        }).exec({
+          error:function(err){
+            return res.negociate(err);
+          },
+          success:function(encryptedPassword){
+            var nouveauPass= {"password":encryptedPassword
+            }
+            User.update({id:id},nouveauPass).exec(function afterwards(err, updated){
+              if (err) {
+                // handle error here- e.g. `res.serverError(err);`
+                console.log('Error')+res.serverError(err);
+                return res.redirect('/dashboard');
+              }
+            });function userCreated(err,newUser){
+                  if(err){
+                    console.log('Erreur: ' + err);
+                    return res.negociate(err);
+                  }
+                  // Variable session pour dire si le user est loggé
+                  console.log('Utilisateur Ajouté');
+                  return res.json({
+                    id:newUser.id
+                  })
+                }
+              }
+            })
           }
-        });
-      }
-      else {
-        return;
-      }
-    });
+        })
   }
 };
 
