@@ -1,11 +1,11 @@
 #Demo
 <a href="http://appuser.herokuapp.com/">http://appuser.herokuapp.com/</a>
 
-<h2>Probleme avec edit ....... Working in it ... Working on Google chrome though...</h2>
+<h4>Probleme avec edit ....... Working in it ... Working on Google chrome though...</h4>
 
 <h4>INFOS sur heroku(lenteur offre FREE)</h4>
 
-<h1>L'app est configurée pour fonctionner avec mongoLab.</h1>
+<h4>L'app est configurée pour fonctionner avec mongoLab.</h4>
 #Requis pour lancer l'app:
 <ul>
 <li>git</li>
@@ -26,7 +26,7 @@ Voir résultat sur localhost:1337
 #TODO
 
 <ul>
-<li> <strike>Trouver une solution au probleme d'édition sous certains navigateurs.. </strike></li>
+<li> Trouver une solution au probleme d'édition sous certains navigateurs.. </li>
 <li>Mettre de l'ordre dans le readMe</li>
 </ul>
 
