@@ -1,7 +1,8 @@
 #Demo
 <a href="http://appuser.herokuapp.com/">http://appuser.herokuapp.com/</a>
 
-<img src:"http://www.ondego.be/divers/userauth.png"/>
+<img src="http://www.ondego.be/divers/userauth.png"/>
+
 
 <h4>Probleme avec edit ....... Working in it ... Working on Google chrome though...</h4>
 
